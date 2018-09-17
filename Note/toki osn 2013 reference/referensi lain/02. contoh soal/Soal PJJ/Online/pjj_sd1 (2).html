@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 27 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title>TEKS : Data dan Tipe Data </title>
+</head><body>
+
+<!-- title -->
+<h1>TEKS : Data dan Tipe Data </h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Data adalah sesuatu yang memakai memori, karena data diletakkan
+di memori.
+Program sebetulnya adalah data.  Kode program
+itu sendiri, dan kode mesin yang terjadi setelah program itu
+di-compile adalah data yang akan diletakkan di suatu tempat
+di memori.  Oleh karena itu, bahkan program seperti ini:
+</p>
+<pre class="code">
+begin
+end.
+</pre>
+<p>
+tetap memakan memori yang besarnya lebih daripada 0 bytes.
+Oleh karena itu, jika dituliskan pada "header" soal bahwa
+batas memori adalah 1 MB, mungkin Anda hanya mendapatkan
+memori sebesar 700 KB - 800 KB untuk variabel-variabel Anda.
+</p>
+<p>
+Setiap variabel yang Anda deklarasikan di program utama
+(global variable) akan dianggap sebagai data yang memakan
+sejumlah memori, dari permulaan program sampai program selesai.
+Setiap variabel memiliki tipe data, dan setiap tipe data
+memiliki besar memori yang berbeda-beda dan jangkauan yang
+berbeda-beda.  Misalnya, sebuah <span class="code">integer</span>
+memakan memori 2 bytes, dan oleh karena itu hanya dapat
+menyimpan sebuah bilangan bulat bernilai -32768 sampai dengan 32767.
+</p>
+<p>
+Tipe data yang umum digunakan dalam Pascal adalah sebagai berikut:
+</p>
+<table border="1" cellpadding="2px">
+  <thead style="font-weight: bold;"><tr>
+    <td>Jenis</td>
+    <td>Tipe data</td>
+    <td>Range</td>
+    <td>Memori (byte)</td>
+  </tr></thead>
+  <tbody><tr>
+    <td>Bilangan bulat</td>
+    <td><span class="code">shortint</span></td>
+    <td>-128..127</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Bilangan bulat</td>
+    <td><span class="code">byte</span></td>
+    <td>0..255</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Bilangan bulat</td>
+    <td><span class="code">smallint</span></td>
+    <td>-32768..32767</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Bilangan bulat</td>
+    <td><span class="code">integer</span></td>
+    <td>-32768..32767</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Bilangan bulat</td>
+    <td><span class="code">word</span></td>
+    <td>0..65535</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Bilangan bulat</td>
+    <td><span class="code">longint</span></td>
+    <td>-2147483648..2147483647</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>Bilangan bulat</td>
+    <td><span class="code">longword</span></td>
+    <td>0..4294967295</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>Bilangan bulat</td>
+    <td><span class="code">int64</span></td>
+    <td>-9223372036854775808..9223372036854775807</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td>Bilangan bulat</td>
+    <td><span class="code">qword</span></td>
+    <td>0..18446744073709551615</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td>Bilangan real</td>
+    <td><span class="code">real</span></td>
+    <td>tergantung platform</td>
+    <td>4-8</td>
+  </tr>
+  <tr>
+    <td>Bilangan real</td>
+    <td><span class="code">single</span></td>
+    <td>1.5e-45..3.4e38</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>Bilangan real</td>
+    <td><span class="code">double</span></td>
+    <td>5.0e-324..1.7e308</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td>Boolean</td>
+    <td><span class="code">boolean</span></td>
+    <td>false, true</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Karakter</td>
+    <td><span class="code">char</span></td>
+    <td>#0..#255</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>String</td>
+    <td><span class="code">string</span></td>
+    <td>String dengan panjang maksimal 255</td>
+    <td>256</td>
+  </tr>
+  <tr>
+    <td>String</td>
+    <td><span class="code">string[x]</span></td>
+    <td>String dengan panjang maksimal <span class="code">x</span></td>
+    <td>(<span class="code">x</span> + 1)</td>
+  </tr>
+  </tbody>
+</table>
+<p>(Diambil dari
+<a href="http://www.freepascal.org/docs-html/ref/ref.html">
+http://www.freepascal.org/docs-html/ref/ref.html</a>)</p>
+<p>
+Tipe data yang sering digunakan untuk bilangan bulat
+adalah <span class="code">longint</span>.
+Biasakan menggunakan longint sebagai pengganti integer, karena
+longint diproses sangat cepat oleh prosesor 32-bit, bahkan lebih
+cepat daripada memroses sebuah integer.
+</p>
+<p>
+Catatan untuk bilangan real: 
+Semua tipe bilangan real dapat
+menyimpan bilangan positif dan negatif.
+Dan BASEe-EXP artinya adalah
+BASE x 10<sup>EXP</sup>.  Jadi, misalnya
+tipe data single dapat menyimpan nilai
+0, 1.5 x 10<sup>-45</sup>..3.4 x 10<sup>38</sup> (positif), dan
+-3.4 x 10<sup>38</sup>..-1.5 x 10<sup>-45</sup> (negatif).
+</p>
+<p>
+Bilangan real juga memiliki tingkat keakuratan yang berbeda.
+Misalnya <span class="code">single</span> akurat sampai 7-8 digit dan
+<span class="code">double</span> akurat sampai
+15-16 digit.  Jadi, hasil dari <span class="code">1.0 / 3.0 * 3.0</span>
+mungkin bukan 1.0, tetapi 0.9999999 atau 1.0000001.
+Oleh karena itu, pada saat menggunakan tipe data real,
+jangan melakukan pembandingan dengan tanda "sama dengan" ( = ).
+Misalkan Anda memiliki variabel bilangan real bernama
+<span class="code">r</span>.  Pernyataan
+</p>
+<pre class="code">
+if (r = 1.0) then
+</pre>
+<p>
+adalah hal yang salah,
+karena tipe bilangan real mungkin tidak menyimpan nilai yang
+persis sama dengan <span class="code">1.0</span>.
+Hal yang seharusnya dilakukan adalah
+</p>
+<pre class="code">
+if (abs(r - 1.0) > toleransi) then
+</pre>
+<p>
+dengan toleransi didefinisikan sebagai sebuah nilai yang
+sangat kecil, misalnya <span class="code">0.0001</span>.
+Ingat bahwa nilai toleransi juga tidak boleh terlalu kecil,
+karena nilai toleransi yang terlalu kecil tidak akan berguna
+untuk pembandingan bilangan real.
+</p>
+<p>
+Pada artikel-artikel berikutnya, akan dibahas
+<span class="code">array</span> dan <span class="code">record</span>,
+sebagai tipe data yang sering kali lebih bermanfaat, tetapi
+akan memakan memori yang lebih besar dari sebuah variabel tunggal.
+</p>
+<p>
+Sebagai catatan, ada perbedaan antara pemakaian memori oleh
+global variable dan local variable.  Semua global variable
+akan memakai memori pada saat program mulai dijalankan sampai
+program selesai.  Sedangkan, local variable hanya memakan memori
+pada saat prosedur atau fungsi yang mengandungnya dipakai.
+Misalnya Anda memiliki sebuah prosedur seperti ini
+(notasi array akan dibahas selanjutnya):
+</p>
+<pre class="code">
+procedure Tulis;
+var
+    a: array[1..1000000] of longint;
+begin
+    writeln;
+end;
+</pre>
+<p>
+Prosedur ini akan memakai memori 1000000 * 4 bytes = 4 MB hanya jika
+prosedur ini dipanggil.  Setelah prosedur ini selesai, memori 4 MB
+tersebut akan dibebaskan kembali.  Jika prosedur Tulis tidak pernah
+dipanggil, array <span class="code">a</span> tidak akan pernah diciptakan.
+Biasanya total memori yang boleh dipakai
+global variable dan yang boleh dipakai local variable memiliki
+batasan yang berbeda.  Batas memori global variable adalah sesuai
+yang tertera di
+header soal, tetapi batas memori local variable biasanya
+ditandai dengan <span class="bold">"stack size"</span>, dan biasanya
+tidak lebih dari <span class="bold">8 MB</span>.
+Oleh karena itu, disarankan tidak membuat
+struktur data local variable yang terlalu besar.
+</p>
+<p>
+Prosedur atau fungsi rekursif juga akan memakan memori yang cukup
+besar jika fungsi atau prosedur tersebut dipanggil terus-menerus
+sehingga mencapai kedalaman yang sangat besar.  Contohnya:
+</p>
+<pre class="code">
+function Genap(n: integer): boolean;
+begin
+    if (n = 0) then
+        return true
+    else
+        return not Genap(n - 1);
+end;
+</pre>
+<p>
+Fungsi di atas adalah fungsi rekursif yang berfungsi untuk
+menentukan apakah suatu bilangan genap atau ganjil, tetapi
+melakukannya dengan cara yang sangat tidak efisien.
+Jika <span class="code">Genap(10000000)</span> dipanggil,
+fungsi tersebut akan melakukan rekursi ke
+<span class="code">Genap(9999999)</span>,
+<span class="code">Genap(9999998)</span>,
+<span class="code">Genap(9999997)</span>,
+dan seterusnya, berusaha mencapai
+<span class="code">Genap(0)</span>.
+Namun, pada kedalaman tertentu, fungsi tersebut akan
+mengalami <span class="bold">"stack overflow"</span>, yaitu
+sebuah kondisi di mana batas stack (batas memori local variable)
+telah dilampaui.  Perhatikan bahwa fungsi genap paling sedikit
+memakan 12 bytes memori:
+</p>
+<ul>
+<li><p>4 bytes untuk tipe data parameter <span class="code">n: integer</span></p></li>
+<li><p>4 bytes untuk boolean (meskipun boolean hanya memakai 1 byte,
+tetapi compiler akan membulatkan ke atas menjadi 4 bytes)</p></li>
+<li><p>4 bytes untuk menyimpan alamat "return address" pada
+saat run-time</p></li>
+</ul>
+<p>
+Jadi, setelah sekitar hampir 670000 kali memanggil dirinya sendiri,
+stack yang dipakai akan melebihi 8 MB, sehingga terjadi "stack overflow".
+</p>
+<p>
+Untuk saat ini, Anda perlu memperhatikan batas memori untuk
+global variable saja.  Pada latihan-latihan berikutnya
+akan diperkenalkan rekursi, dan Anda akan diminta untuk
+memperhatikan juga batas memori stack.
+</p>
+</div>
+
+
+</body></html>

@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 21 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title>Array</title>
+</head><body>
+
+<!-- title -->
+<h1>Array</h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0202.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Anda diminta untuk belajar menggunakan suatu jenis
+variabel yang lebih kompleks yang dapat menyimpan
+sejumlah harga, yang dikenal dengan nama array.
+Variabel tersebut memiliki elemen-elemen yang
+masing-masing dapat menyimpan harga tersendiri.
+Harga-harga yang tersimpan dalam elemen-elemen
+array dapat diakses menggunakan indeks yang didefinisikan
+pada deklarasi array tersebut.
+Dalam Pascal indeks dapat berupa
+suatu jangkauan harga integer apapun, misalnya dari -5 s.d. 5
+atau dari 100 s.d. 200. Tetapi untuk memudahkan
+berpindah ke bahasa pemrograman yang lain
+(seperti C, C++ atau Java) maka sebaiknya membiasakan
+diri agar setiap indeks yang digunakan memiliki jangkauan
+bilangan bulat nonnegatif yang dimulai dari 0.</p>
+<p>
+Suatu variabel array didefinisikan pada bagian deklarasi variabel sbb
+</p>
+<pre class="code">
+&lt;nama variabel&gt; : array [&lt;jangkauan indeks&gt;] of &lt;jenis data&gt;;
+</pre>
+<p>
+Aturan nama variabel array mengacu pada
+aturan penamaan variabel yang umum.
+Tipe data elemen array dapat memakai jenis-jenis data sederhana yang
+ada dalam Pascal seperti
+<span class="code">integer</span>,
+<span class="code">longint</span>,
+<span class="code">real</span>, dll.
+Jangkauan indeks jika dimulai dari A s.d. B
+(catatan: A dan B adalah bilangan dengan A &le; B)
+ditulis dengan A..B. Dengan demikian harga pada suatu
+elemen array tersebut dapat diakses melalui indeksnya
+mulai dari  A, A+1, A+2, ..., B dengan
+menggunakan kurung siku
+<span class="code">&lt;nama variabel&gt;[&lt;indeks&gt;]</span>.
+Jadi misalnya array string dengan deklarasi sbb:
+</p>
+<pre class="code">
+Tabel : array[0..10] of string;
+</pre>
+<p>
+Untuk menyimpan harga 'Viva TOKI'
+pada elemen ke 5 array ditulis
+</p>
+<pre class="code">
+Tabel[5] = 'Viva TOKI';
+</pre>
+<p>
+Sayangnya menurut aturan resmi dalam Pascal, jumlah elemen
+array harus dideklarasikan secara tetap, yaitu dari awal
+hingga akhir berjalannya program, ukuran array tersebut
+tidak berubah (Suatu ketika akan dibahas cara menggunakan
+array dengan ukuran dinamis dalam Pascal).
+Selain itu, hati-hati dengan Turbo Pascal versi
+DOS (7.0 dan sebelumnya) yang tidak mampu menyimpan
+array string &gt; 256 elemen (total ukuran array &gt; 64 KB).
+Dengan FreePascal untuk Windows tidak ada masalah tersebut.
+</p>
+<p>
+Program Anda harus membaca bilangan-bilangan
+(satu bilangan per baris masukan) namun program
+menghasilkan keluaran dengan urutan terbalik dari masukan.
+Untuk itu program Anda harus membaca seluruh baris masukan
+ke dalam array kemudian mencetak mundur mulai dari baris
+yang terakhir dibaca hingga yang pertama. Ingat: dalam 
+latihan ini Anda harus menggunakan array, meskipun sebenarnya
+ada cara lain tanpa menggunakan array.
+</p>
+<p>
+Mengingat array harus berukuran tetap maka masukan dijamin
+tidak akan berisi lebih dari 25000 bilangan sehingga
+Anda deklarasikan array penyimpan integer dengan
+jangkauan 0..24999. Hal yang program Anda harus
+lakukan juga adalah menghitung jumlah bilangan saat
+bilangan demi bilangan dibaca.  Setelah bilangan bilangan
+terakhir (bilangan ke-N) dibaca,
+pencetakan dilakukan mundur mulai dari elemen
+berindeks N-1 hingga 0.
+</p>
+<p>
+Jika pada Latihan 5 anda diperkenalkan dengan struktur loop for-do
+dengan harga iterator menaik, berikut ini kita bisa
+menggunakan loop for-do dengan harga iterator menurun sbb
+</p>
+<pre class="code">
+for &lt;iterator&gt; := &lt;harga-awal&gt; downto &lt;harga-akhir&gt; do
+begin
+    &lt;perintah-perintah&gt;
+end;
+</pre>
+<p>
+Perbedaannya terletak pada kata 'downto' menggantikan 'to'.
+Ingat bahwa <span class="code">&lt;harga-awal&gt;</span> harus tidak lebih kecil
+dari <span class="code">&lt;harga-akhir&gt;</span>.
+</p>
+<p>
+Namai program tersebut dengan nama pjj0202 dan
+simpanlah dengan nama pjj0202.PAS.
+</p>
+</div>
+
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN </h2>
+<pre class="io">
+1
+2
+3
+4
+5
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN </h2>
+<pre class="io">
+5
+4
+3
+2
+1
+</pre>
+</div>
+</body></html>

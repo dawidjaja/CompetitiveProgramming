@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 30 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title> Permutasi Zig-zag </title>
+</head><body>
+
+<!-- title -->
+<h1> Permutasi Zig-zag </h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0306.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Pada artikel "Rekursi (2)" sudah dibahas cara menulis permutasi
+dari angka-angka 1, 2, ..., N.  Kali ini, Anda diminta untuk
+menuliskan semua bilangan yang terdiri atas N (1 &le; N &le; 9) digit
+dan digit-digitnya merupakan permutasi dari 1, 2, ..., N, dan
+mengikuti "aturan zig-zag" sebagai berikut:
+</p>
+<blockquote>
+Untuk setiap tiga digit yang berurutan, salah satu kasus ini
+harus dipenuhi:
+<ul>
+<li>Digit yang di tengah harus lebih kecil dari kedua digit lainnya.</li>
+<li>Digit yang di tengah harus lebih besar dari kedua digit lainnya.</li>
+</ul>
+</blockquote>
+<p>
+Misalnya, bilangan 1423 memenuhi aturan zig-zag di atas, tetapi bilangan
+1432 tidak memenuhi aturan tersebut.  Jika N &lt; 3, aturan zig-zag tidak perlu
+dipenuhi.
+</p>
+</div>
+
+<!-- input format -->
+<div id="inputformat"> 
+<h2> FORMAT MASUKAN </h2>
+<p>
+Baris pertama berisi sebuah bilangan bulat N.
+</p>
+</div>
+
+<!-- output format -->
+<div id="outputformat"> 
+<h2>FORMAT KELUARAN </h2>
+<p>
+Keluarkan semua kemungkinan bilangan yang merupakan permutasi dari
+digit-digit 1, 2, ..., N dan memenuhi aturan zig-zag, satu bilangan
+setiap baris.  Keluaran harus terurut dari kecil ke besar.
+</p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN </h2>
+<pre class="io">
+3
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN </h2>
+<pre class="io">
+132
+213
+231
+312
+</pre>
+</div>
+
+</div>
+
+</body></html>

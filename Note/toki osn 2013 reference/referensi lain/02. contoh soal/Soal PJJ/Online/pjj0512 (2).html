@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 30 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title> Menghitung Ruang Tertutup </title>
+</head><body>
+
+<!-- title -->
+<h1> OSN 2007 : Menghitung Ruang Tertutup </h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0512.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 32 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Pada suatu hari yang indah, Pak Dengklek bermain-main dengan komputernya. Dia berusaha
+menggambar sesuatu menggunakan karakter-karakter yang tersedia di keyboard. Setelah lama bermain-main,
+Pak Dengklek tertarik dengan karakter slash "/", karakter backslash "\", dan karakter period "." pada
+keyboard, karena dengan karakter-karakter itu dia dapat membuat gambar abstrak seperti gambar berukuran
+5 x 5 di bawah ini:
+<br>
+./\..
+<br>
+.\/\.
+<br>
+.///.
+<br>
+///./
+<br>
+\/./.
+<br>
+Pak Dengklek memiliki kreativitas yang besar. Dari gambar-gambar abstrak yang dibuatnya, dia
+ingin mengetahui ada berapa ruang tertutup yang dihasilkan oleh gambarnya. Ruang tertutup adalah ruang
+yang seluruhnya dibatasi oleh dinding. Karakter slash "/" dan backslash "\" berfungsi sebagai dinding.
+Anggaplah karakter "/" pada suatu kotak tepat menghubungkan titik sudut kanan atas dan kiri bawah kotak
+itu, dan karakter "\" pada suatu kotak tepat menghubungkan titik sudut kiri atas dan kanan bawah kotak itu.
+Sedangkan karakter "." mewakili ruang kosong, walaupun tidak semua ruang kosong ditandai dengan
+karakter ".".
+Untuk lebih jelasnya, gambar abstrak di atas dapat diterjemahkan menjadi gambar di bawah ini:
+</p>
+<img src="pjj0512/image1.png" title="ruang"></img>
+<p>
+Perhatikan bahwa ruang yang dibatasi dengan garis merah dan garis biru merupakan dua ruang tertutup yang
+dimaksud. Catatan: ruang yang ditandai dengan X bukan ruang tertutup, karena ruang itu tidak seluruhnya
+dibatasi oleh dinding (sisi kanan dan sisi bawah terbuka).
+</p>
+
+<!-- input format -->
+<div id="inputformat"> 
+<h2> FORMAT MASUKAN </h2>
+<p>
+Baris pertama berisi bilangan bulat N dan M (1 <= N, M <= 250) yang merupakan tinggi dan lebar
+gambar. N baris berikutnya masing-masing memiliki panjang M karakter dan berisi gambar abstrak yang
+dibuat oleh Pak Dengklek. Gambar abstrak ini hanya terdiri atas karakter "/", "\", dan "." saja.
+</p>
+</div>
+
+<!-- output format -->
+<div id="outputformat"> 
+<h2>FORMAT KELUARAN </h2>
+<p>
+Baris pertama berisi sebuah bilangan bulat yang merupakan jumlah ruang tertutup pada gambar
+abstrak pada masukan.
+</p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 1</h2>
+<pre class="io">
+5 5
+./\..
+.\/\.
+.///.
+///./
+\/./.
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 1</h2>
+<pre class="io">
+2
+</pre>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 2</h2>
+<pre class="io">
+5 6
+../\..
+.//\\.
+.\\.\\
+..\\//
+...\/.
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 2</h2>
+<pre class="io">
+2
+</pre>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 3</h2>
+<pre class="io">
+4 4
+\../
+.\/.
+./\.
+/..\
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 3</h2>
+<pre class="io">
+0
+</pre>
+</div>
+
+
+</body></html>

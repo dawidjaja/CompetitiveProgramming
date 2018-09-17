@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<style>
+div#penulis
+{
+    text-align: right;
+    font-family: garamond, arial, verdana;
+    font-size: 12pt;
+}
+
+div#exp
+{
+    border: 1px solid #0cc;
+    background: #adc;
+    padding: 5px;
+    margin-bottom: 1em;
+}
+div#warn
+{
+    border: 1px solid #900;
+    background: #d22;
+    padding: 5px;
+}
+
+.code
+{
+    font-family: "Courier New", monospace;
+    font-size: 12pt;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+pre.io
+{
+    border: 1px solid #ccc;
+    background: white;
+    padding: 5px;
+}
+
+pre.code
+{
+    border: 1px solid #ccc;
+    background: white;
+    padding: 5px;
+    margin-left: 30px;
+}
+
+body 
+{
+    background-color: #eee;
+    font-size: 12pt;
+    font-family: verdana;
+    margin: 15px;
+    padding: 15px;
+}
+
+h1 
+{
+    text-align: center;
+    font-family: times, "times new roman";
+    font-size: 18pt;
+}
+
+h2 
+{
+    font-size: 12pt;
+    font-family: garamond, verdana, arial;
+    margin-top: 30px;
+}
+
+h3
+{
+    font-size: 12pt;
+    font-family: garamond, verdana, arial;
+    margin-top: 0px;
+}
+
+p
+{
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+hr
+{
+    text-align: left;
+    width: 10%;
+}
+
+table#header
+{
+    width: 100%;
+    font-family: garamond, arial, verdana;
+    font-size: 12pt;
+}
+
+table#header td.judul
+{
+    text-align: right;
+    font-weight: bold;
+}
+
+table#header td
+{
+    padding: 0px 5px 0px 5px;
+    width: 50%;
+}
+</style>
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 25 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title>Procedure</title>
+</head><body>
+
+<!-- title -->
+<h1>Procedure</h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0110.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Program ini harus membaca beberapa bilangan bulat, satu bilangan
+per baris, dan menuliskan keluaran 'satuan' atau 'puluhan'
+atau 'ratusan' atau 'ribuan' atau 'puluhribuan' untuk
+setiap bilangan yang dibaca.
+</p>
+<p>
+Berbeda dengan latihan sebelumnya, pada latihan ini Anda membaca
+banyak bilangan bulat, tidak hanya satu.
+</p>
+<p>
+Pada latihan ini akan diperkenalkan konsep procedure.  Sebuah
+procedure (prosedur) adalah deretan perintah-perintah yang dapat
+dieksekusi dengan cara memanggil namanya.  Bentuk umum deklarasi
+prosedur adalah:
+</p>
+<pre class="code">
+procedure &lt;nama&gt;(&lt;daftar parameter&gt;);
+&lt;daftar deklarasi&gt;
+begin
+  &lt;perintah-perintah&gt;
+end;
+</pre>
+
+Contohnya, kita dapat membuat sebuah procedure bernama 'TulisJawaban':
+<pre class="code">
+procedure TulisJawaban(x: integer);
+begin
+    case x of
+        1..9: begin writeln('satuan'); end;
+        10..99: begin writeln('puluhan'); end;
+        100..999: begin writeln('ratusan'); end;
+        1000..9999: begin writeln('ribuan'); end;
+        10000..30000: begin writeln('puluhribuan'); end;
+    end;
+end;
+</pre>
+<p>
+Setelah itu procedure TulisJawaban ini dapat kita gunakan untuk
+memecahkan masalah awal:
+</p>
+<pre class="code">
+while not eof(input) do
+begin
+   readln(bil);
+   TulisJawaban(bil);
+end;
+</pre>
+<p>
+Untuk setiap <span class="code">bil</span> yang dibaca, nilai variabel
+<span class="code">bil</span> akan
+"dimasukkan" ke dalam variabel x di dalam procedure TulisJawaban.
+Lalu prosedur tersebut akan mengeluarkan 'satuan',
+'puluhan', 'ratusan', 'ribuan', atau 'puluhribuan'
+tergantung pada nilai <span class="code">x</span>.
+Secara keseluruhan, program ini akan mengeluarkan jenis
+bilangan untuk setiap bilangan yang dibaca.
+</p>
+<p>
+Perhatikan kesamaan penulisan
+<span class="code">readln(bil);</span>
+dan
+<span class="code">TulisJawaban(bil);</span>.
+Sesungguhnya, readln dan writeln juga adalah prosedur,
+tetapi prosedur-prosedur tersebut sudah dibuatkan
+untuk kita, sehingga kita tinggal menggunakannya saja.
+</p>
+<p>
+Namai program tersebut dengan nama pjj0110 dan simpanlah
+dengan nama pjj0110.PAS'.
+ </p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN </h2>
+<pre class="io">
+1
+12 
+123
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN </h2>
+<pre class="io">
+satuan
+puluhan
+ratusan
+</pre>
+</div>
+
+
+</body></html>

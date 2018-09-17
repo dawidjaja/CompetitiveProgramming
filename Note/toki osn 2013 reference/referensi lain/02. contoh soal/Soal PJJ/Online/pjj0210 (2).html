@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 23 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title>Bilangan Prima</title>
+</head><body>
+
+<!-- title -->
+<h1>Bilangan Prima</h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0210.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Anda seharusnya sudah tahu apakah bilangan prima itu.
+Singkatnya bilangan prima adalah bilangan bulat lebih dari 1
+yang tidak dapat dibagi menjadi bilangan bulat lagi
+oleh bilangan bulat lain kecuali oleh dirinya sendiri.
+Contoh bilangan prima: 2, 3, 5, 7, 11, 13, 17, dst.
+Misalnya, 9 bukan bilangan prima karena 9 dapat dibagi 3.
+Apakah -5 bilangan prima?  Menurut definisi di atas, bilangan prima
+adalah bilangan bulat positif, sehingga -5 bukan prima.
+</p>
+<p>
+Buatlah program yang dapat
+memeriksa apakah suatu bilangan bulat sembarang
+(-32000 &lt; bilangan &lt; 32000) yang diberikan adalah
+bilangan prima atau bukan.
+Program anda akan membaca masukan yang berisi sejumlah baris
+yang masing-masing baris berisi bilangan yang akan
+diperiksa. Untuk setiap baris masukan program akan
+mencetak keluaran 'YA' jika masukan adalah prima atau
+'TIDAK' jika masukan bukan prima.
+Jadi, untuk setiap baris masukan terdapat satu baris
+keluaran dengan urutan masukan dan keluaran bersesuaian.
+</p>
+
+<p>
+Note: Ada banyak cara (algoritma) untuk memeriksa apakah suatu bilangan
+prima.  Namun untuk sekarang Anda boleh menggunakan cara ini:
+Jika bilangan itu adalah A maka anda dapat memeriksa apakah A
+dapat dibagi oleh setiap bulangan bulat mulai dari
+2 sampai dengan <span class="code">trunc(sqrt(A))</span>.
+</p>
+<p>
+(Cara lain yang terkenal dikenal dengan nama 'The Sieve'
+yaitu singkatan dari 'The Sieve of Erastosthenes'.
+Suatu waktu akan dijelaskan cara bekerja algoritma tersebut.)
+</p>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN </h2>
+<pre class="io">
+23
+-7
+9000
+1
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN </h2>
+<pre class="io">
+YA
+TIDAK
+TIDAK
+TIDAK
+</pre>
+</div>
+
+
+</body></html>

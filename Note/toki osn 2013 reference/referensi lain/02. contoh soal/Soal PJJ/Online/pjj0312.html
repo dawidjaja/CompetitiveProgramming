@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 30 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title> Jawbreaker 4: Cari Terbesar 2 Langkah </title>
+</head><body>
+
+<!-- title -->
+<h1> Jawbreaker 4: Cari Terbesar 2 Langkah</h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0312.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Misalkan Anda memilih posisi yang memberikan
+nilai terbesar A, kemudian setelah bola-bola pada rangkaian
+diambil dan bola-bola lain diruntuhkan, Anda memilih
+lagi posisi yang memberikan nilai terbesar B.
+Percayakah anda bahwa nilai (A + B) belum tentu paling besar
+dari semua kemungkinan dua langkah yang bisa dilakukan?
+Logikanya, mungkin ada dua langkah yang menghasilkan A'
+pada langkah pertama dan B' pada langkah kedua,
+dan meskipun A' &lt; A,  tetapi B’ jauh lebih besar daripada B
+sehingga A' + B' &gt; A + B.  Contohnya sebagai berikut:</p>
+<p>
+<pre class="io">
+1 2 1 2 2
+1 1 2 1 1
+1 1 2 1 1
+1 1 2 1 1
+</pre>
+<p>
+Dengan algoritma sebelumnya, pertama kali rangkaian bola berwarna '1'
+di bagian kiri akan diambil, dengan nilai
+7 x 6 = 42, sehingga setelah diruntuhkan menjadi:
+</p>
+<pre class="io">
+. . 1 2 2
+. . 2 1 1
+. . 2 1 1
+. 2 2 1 1
+</pre>
+<p>
+Setelah itu, rangkaian bola berwarna '1' di bagian kanan akan diambil,
+dengan nilai 6 x 5 = 30.  Jadi nilai total kedua langkah ini adalah 72.
+</p>
+<pre class="io">
+. . 1 . .
+. . 2 . .
+. . 2 . .
+. 2 2 2 2
+</pre>
+<p>
+Mari kembali ke posisi awal.  Jika yang dipilih adalah rangkaian bola
+berwarna '2' yang ada di tengah terlebih dahulu, kita mendapat
+nilai 3 x 2 = 6.
+</p>
+<pre class="io">
+1 2 . 2 2
+1 1 . 1 1
+1 1 . 1 1
+1 1 1 1 1
+</pre>
+<p>
+Setelah diruntuhkan, akan terbentuk rangkaian bola berwarna '1' yang
+sangat besar, yang jika diruntuhkan akan menghasilkan nilai
+14 x 13 = 182, sehingga total nilai yang diperoleh adalah 188, meskipun
+langkah pertama tidak menghasilkan banyak nilai.
+</p>
+<pre class="io">
+. . . . .
+. . . . .
+. . . . .
+. 2 . 2 2
+</pre>
+<p>
+Algoritma untuk melakukan langkah yang menghasilkan
+nilai paling besar satu demi satu, tetapi tidak peduli
+apakah pada akhirnya totalnya maksimal atau tidak,
+dikenal dengan istilah algoritma greedy.
+Untuk sejumlah masalah, algoritma greedy bisa
+digunakan, tetapi dalam kebanyakan masalah lainnya tidak,
+contohnya dalam masalah ini.
+Sebuah harga yang dicapai secara greedy
+tersebut dikenal dengan istilah <span class="bold">"local maximum"</span>
+sementara harga optimal yang dicari adalah
+<span class="bold">"global maximum"</span>.
+</p>
+<p>
+Pada soal ini, Anda diminta untuk mencari global maximum
+untuk dua langkah saja.</p>
+</div>
+
+<!-- input format -->
+<div id="inputformat"> 
+<h2> FORMAT MASUKAN </h2>
+<p>
+Baris pertama berisi dua bilangan M dan N
+(4 &le; M, N &le; 25) yang dipisahkan spasi
+yang menyatakan jumlah baris dan jumlah kolom.
+M baris berikutnya berisi susunan bola, dan pada setiap baris
+terdapat N bilangan bulat yang dapat berharga 1 sampai dengan 5
+(yang menyatakan warna bola), dipisahkan oleh sebuah spasi.
+</p>
+</div>
+
+<!-- output format -->
+<div id="outputformat"> 
+<h2>FORMAT KELUARAN </h2>
+<p>
+Keluarkan nilai terbesar yang dapat dicapai dari dua langkah
+pengambilan yang optimal.
+</p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN</h2>
+<pre class="io">
+4 5
+1 2 1 2 2
+1 1 2 1 1
+1 1 2 1 1
+1 1 2 1 1
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN</h2>
+<pre class="io">
+188
+</pre>
+</div>
+
+</body></html>

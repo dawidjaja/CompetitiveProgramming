@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: INSERT HERE -->
+
+
+  <!-- browser title -->
+  <title>Matriks</title>
+</head><body>
+
+<!-- title -->
+<h1>Matriks</h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0203.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Setelah mahir menggunakan array, Anda akan
+belajar menggunakan array dua dimensi yang berguna
+misalnya untuk menyimpan sebuah matriks.
+Array dua dimensi adalah array yang diakses menggunakan
+dua indeks.  Misalnya, <span class="code">Tabel[a,b]</span>
+adalah elemen dari array
+dua dimensi bernama <span class="code">Tabel</span> pada baris
+berindeks <span class="code">a</span> dan
+kolom berindeks <span class="code">b</span>.
+Deklarasi array dua dimensi mirip
+dengan array satu dimensi, kecuali bagian
+<span class="code">&lt;jangkauan harga indeks&gt;</span> berisikan dua
+jangkauan yang dipisahkan tanda koma
+(','). Misalnya
+</p>
+<pre class="code">
+Tabel: array[0..99, 0..99] of integer;
+</pre>
+<p>
+adalah array dua dimensi (membentuk matriks dua dimensi)
+berukuran 100 x 100.
+</p>
+<p>
+Buatlah program yang dapat membaca data matriks kemudian
+mengeluarkan isi matriks yang telah diputar
+90 derajat menurut arah jarum jam.
+Misalnya matriks yang dibaca
+</p>
+<pre class="io">
+34  87  15
+66  71  52
+47  47  48
+45  75  35
+</pre>
+<p>
+Program akan mencetak
+</p>
+<pre class="io">
+45  47  66  34
+75  47  71  87
+35  48  52  15
+</pre>
+<p>
+Ukuran matriks tidak akan lebih dari 100 x 100,
+jadi Anda dapat mendeklarasikan matriks dengan ukuran maksimum ini.
+Namun berhubung data tidak selalu berukuran 100 x 100,
+maka Anda perlu memiliki variabel yang mencatat berapa
+banyak baris dan berapa banyak kolom pada matriks.
+</p>
+<p>
+Untuk memudahkan pembacaan, pada baris pertama masukan,
+banyak baris dan banyak kolom diberikan sebagai dua bilangan
+bulat yang dipisahkan spasi. Pembacaan dua bilangan dalam
+satu baris dilakukan sekaligus oleh satu perintah
+<span class="code">readln</span>
+seperti pada Latihan 3.
+</p>
+<!-- NOTE: hard to understand.  Specific examples would be more useful. -->
+<p>
+Kemudian, pada setiap baris masukan berikutnya, harga-harga
+matriks dapat dibaca dengan urutan baris masukan sesuai
+dengan urutan baris matriks, dan pada setiap baris masukan
+harga elemen-elemen matriks dalam satu baris dituliskan
+dari kiri ke kanan dengan dipisahkan satu spasi.
+Untuk membaca satu baris, program
+Anda harus membaca satu demi satu harga dengan for-loop.
+Agar pembacaan masih pada baris yang sama, maka jangan gunakan
+perintah <span class="code">readln</span>, tetapi gunakan
+<span class="code">read</span>.  Jadi program Anda
+perlu menggunakan dua nested
+for loop: for loop luar untuk per baris, dan for loop
+dalam untuk elemen-elemen dalam satu baris.
+</p>
+<p>
+Demikian juga, saat penulisan keluaran diperlukan dua
+nested for loop tetapi dengan iterator yang berbeda.
+Jumlah baris dan jumlah kolom tidak perlu dicetak pada
+keluaran ini, hanya isi matriks yang terputar.
+Penulisan setiap elemen bukan dengan
+<span class="code">writeln</span> tetapi
+dengan <span class="code">write</span>,
+agar dapat menuliskan beberapa harga
+dalam satu baris.  Setelah selesai menuliskan
+harga-harga dalam satu baris, gunakan
+<span class="code">writeln</span>
+untuk turun ke baris berikutnya.
+Jangan lupa menyertakan satu spasi
+untuk memisahkan satu elemen dengan elemen berikutnya,
+dan jangan ada spasi yang berlebih di akhir setiap baris.
+</p>
+<p>
+Namai program tersebut dengan nama pjj0203 dan simpanlah
+dengan nama pjj0203.PAS.
+</p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN </h2>
+<pre class="io">
+4 3
+34  87  15
+66  71  52
+47  47  48
+45  75  35
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN </h2>
+<pre class="io">
+45  47  66  34
+75  47  71  87
+35  48  52  15
+</pre>
+</div>
+
+</body></html>

@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<style>
+div#penulis
+{
+    text-align: right;
+    font-family: garamond, arial, verdana;
+    font-size: 12pt;
+}
+
+div#exp
+{
+    border: 1px solid #0cc;
+    background: #adc;
+    padding: 5px;
+    margin-bottom: 1em;
+}
+div#warn
+{
+    border: 1px solid #900;
+    background: #d22;
+    padding: 5px;
+}
+
+.code
+{
+    font-family: "Courier New", monospace;
+    font-size: 12pt;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+pre.io
+{
+    border: 1px solid #ccc;
+    background: white;
+    padding: 5px;
+}
+
+pre.code
+{
+    border: 1px solid #ccc;
+    background: white;
+    padding: 5px;
+    margin-left: 30px;
+}
+
+body 
+{
+    background-color: #eee;
+    font-size: 12pt;
+    font-family: verdana;
+    margin: 15px;
+    padding: 15px;
+}
+
+h1 
+{
+    text-align: center;
+    font-family: times, "times new roman";
+    font-size: 18pt;
+}
+
+h2 
+{
+    font-size: 12pt;
+    font-family: garamond, verdana, arial;
+    margin-top: 30px;
+}
+
+h3
+{
+    font-size: 12pt;
+    font-family: garamond, verdana, arial;
+    margin-top: 0px;
+}
+
+p
+{
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+hr
+{
+    text-align: left;
+    width: 10%;
+}
+
+table#header
+{
+    width: 100%;
+    font-family: garamond, arial, verdana;
+    font-size: 12pt;
+}
+
+table#header td.judul
+{
+    text-align: right;
+    font-weight: bold;
+}
+
+table#header td
+{
+    padding: 0px 5px 0px 5px;
+    width: 50%;
+}
+</style>
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 21 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title>Menjumlah dalam Satu Baris</title>
+</head><body>
+
+<!-- title -->
+<h1>Menjumlah dalam Satu Baris </h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0105.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Jika pada latihan ketiga bilangan-bilangan dituliskan
+pada masing-masing baris, maka kali ini bilangan-bilangan
+dituliskan pada satu baris yang sama.  Untuk membantu
+program Anda, bilangan pada baris pertama menunjukkan
+berapa banyak bilangan yang akan Anda jumlahkan.
+Jadi, program Anda harus membaca bilangan ini di awal,
+kemudian membaca bilangan-bilangan sebanyak nilai
+bilangan tadi.
+</p>
+<p>
+Untuk perulangan (loop) dengan jumlah yang pasti/tertentu
+dalam Pascal, Anda dapat menggunakan struktur loop for berikut
+</p>
+<pre class="code">
+    for &lt;iterator&gt; := &lt;harga-awal&gt; to &lt;harga-akhir&gt; do
+    begin
+        &lt;perintah-perintah&gt;
+    end;
+</pre>
+ 
+<p>
+<span class="code">&lt;iterator&gt;</span>
+adalah variabel yang akan berubah harganya
+setiap loop dilakukan, dimulai dari harga
+<span class="code">&lt;harga-awal&gt;</span>.
+Setiap perulangan, harga variabel tersebut bertambah satu.
+Perulangan demi perulangan dilakukan hingga variabel berharga
+<span class="code">&lt;harga-akhir&gt;</span>. Tentu saja
+<span class="code">&lt;harga-awal&gt;</span> harus
+lebih kecil atau sama dengan
+<span class="code">&lt;harga-akhir&gt;</span>, karena
+kalau tidak maka program akan terus-menerus melakukan loop.
+
+Kita perlu dua variabel baru, untuk
+mencatat jumlah bilangan yang akan dibaca, misalnya
+<span class="code">jbil</span>
+dan untuk &lt;iterator&gt; misalnya
+<span class="code">i</span>.
+</p>
+<p>
+Jadi pada bagian deklarasi ditambah dengan pernyataan
+</p>
+<pre class="code">
+jbil, i: integer;
+</pre>
+<p>
+Dan bagian badan program diganti dengan
+</p>
+<pre class="code">
+    jml := 0;
+    read(jbil);
+    
+    for i := 1 to jbil do
+    begin
+       read(bil);
+       jml := jml + bil;
+    end;
+    
+    writeln(jml);
+</pre>
+<p>
+Catatan: perintah readln diganti dengan perintah read agar
+pembacaan berikutnya tetap membaca pada baris yang sama.
+</p>
+<p>
+Lakukan juga pengujian seperti pada latihan-latihan sebelumnya.
+Namai program tersebut dengan nama pjj0105 dan simpanlah dengan nama
+'pjj0105.PAS'.
+</p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN </h2>
+<pre class="io">
+5 1 2 3 4 5
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN </h2>
+<pre class="io">
+15
+</pre>
+</div>
+
+</body></html>

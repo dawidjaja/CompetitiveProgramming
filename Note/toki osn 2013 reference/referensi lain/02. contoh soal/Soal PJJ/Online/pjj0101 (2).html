@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<style>
+div#penulis
+{
+    text-align: right;
+    font-family: garamond, arial, verdana;
+    font-size: 12pt;
+}
+
+div#exp
+{
+    border: 1px solid #0cc;
+    background: #adc;
+    padding: 5px;
+    margin-bottom: 1em;
+}
+div#warn
+{
+    border: 1px solid #900;
+    background: #d22;
+    padding: 5px;
+}
+
+.code
+{
+    font-family: "Courier New", monospace;
+    font-size: 12pt;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+pre.io
+{
+    border: 1px solid #ccc;
+    background: white;
+    padding: 5px;
+}
+
+pre.code
+{
+    border: 1px solid #ccc;
+    background: white;
+    padding: 5px;
+    margin-left: 30px;
+}
+
+body 
+{
+    background-color: #eee;
+    font-size: 12pt;
+    font-family: verdana;
+    margin: 15px;
+    padding: 15px;
+}
+
+h1 
+{
+    text-align: center;
+    font-family: times, "times new roman";
+    font-size: 18pt;
+}
+
+h2 
+{
+    font-size: 12pt;
+    font-family: garamond, verdana, arial;
+    margin-top: 30px;
+}
+
+h3
+{
+    font-size: 12pt;
+    font-family: garamond, verdana, arial;
+    margin-top: 0px;
+}
+
+p
+{
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+hr
+{
+    text-align: left;
+    width: 10%;
+}
+
+table#header
+{
+    width: 100%;
+    font-family: garamond, arial, verdana;
+    font-size: 12pt;
+}
+
+table#header td.judul
+{
+    text-align: right;
+    font-weight: bold;
+}
+
+table#header td
+{
+    padding: 0px 5px 0px 5px;
+    width: 50%;
+}
+</style>
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 21 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title>Readln dan Writeln</title>
+</head><body>
+
+<!-- title -->
+<h1>Readln dan Writeln </h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0101.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Sebagai perkenalan pertama dengan program Pascal,
+ketikanlah perintah-perintah program berikut ini lalu simpan
+sebagai 'pjj0101.pas'.
+</p>
+<p><blockquote><pre class="io">
+Program Pjj0101;
+var
+    brs: string;
+begin
+    readln(brs);
+    writeln(brs);
+end.
+</pre></blockquote>
+</p>
+<p>
+Program ini akan membaca satu baris teks masukan (dari standard input)
+dan mencetak keluaran (ke standard output) yang persis sama dengan masukan.
+Pada bagian awal program terdapat pernyataan (deklarasi) yang menyebutkan
+digunakannya suatu variabel dengan nama <span class="code">brs</span>.
+Deklarasi ditunjukkan dengan
+adanya notasi <span class="code">var</span>.
+Baris-baris berikutnya setelah notasi <span class="code">var</span>
+adalah tempat menuliskan deklarasi variabel-variabel.
+</p>
+<p>Variabel adalah tempat menyimpan suatu harga dalam program,
+dan selama berjalannya program, harga itu dapat berubah-ubah.
+Setiap variabel dideklarasikan dengan menyebutkan jenis dari harga yang
+dapat disimpannya. <span class="code">brs</span> dideklarasikan sebagai variabel
+berjenis <span class="code">string</span>,
+berarti <span class="code">brs</span> dapat menyimpan string yang
+panjangnya maksimum 255 karakter.
+</p>
+<p>Badan program dinyatakan dengan perintah
+<span class="code">begin</span> dan diakhiri dengan
+perintah <span class="code">end.</span>
+(yaitu <span class="code">end</span> dengan tanda titik).
+<span class="code">readln(brs)</span> berguna
+untuk membaca satu baris string masukan dan hasil pembacaannya
+disimpan dalam variabel <span class="code">brs</span>.
+Perintah
+<span class="code">writeln(brs)</span> berguna untuk
+menuliskan isi variabel <span class="code">brs</span> ke output.
+Dalam program setiap
+perintah dipisahkan dengan tanda “;” (titik koma).  Sebagai kebiasaan
+baik, akhiri setiap baris perintah dengan tanda titik koma seperti
+pada contoh di atas.
+</p>
+<p>Untuk menguji program Anda, bukalah editor
+('edit.exe' atau 'notepad.exe') lalu ketikan suatu teks sesuka anda
+dalam satu baris dengan panjang kurang dari 255 karakter.
+Simpanlah teks tersebut dalam file teks, misalnya dengan nama
+'uji1.txt'. Kompilasi program tersebut dengan compiler yang anda
+gunakan, menjadi 'pjj0101.exe', lalu jalankan perintah pada command prompt.
+</p>
+<pre class="code">pjj0101 &lt; uji.txt</pre>
+<p>
+Jika program mengeluarkan keluaran yang sama dengan isi teks 
+pada input, maka program Anda sudah berjalan dengan benar.
+</p>
+<p>Sebagai latihan menggunakan penguji otomatis, tentunya jika anda
+memiliki akses internet, akses alamat server penguji, login sesuai
+dengan UserId dan Password yang telah Anda miliki, lalu submit
+program 'pjj0101.pas' tersebut. Jika Anda tidak memiliki akses internet
+dan hendak mengirimkannya melalui pos, maka simpanlah ke dalam
+disket atau cd (beserta latihan-latihan lainnya, demi menghemat biaya
+pos Anda!) lalu kirimkan kepada pembina TOKI.</p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN </h2>
+<pre class="io">
+abc
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN </h2>
+<pre class="io">
+abc
+</pre>
+</div>
+
+</body></html>
+

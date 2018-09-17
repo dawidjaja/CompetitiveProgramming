@@ -1,0 +1,354 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<style>
+div#penulis
+{
+    text-align: right;
+    font-family: garamond, arial, verdana;
+    font-size: 12pt;
+}
+
+div#exp
+{
+    border: 1px solid #0cc;
+    background: #adc;
+    padding: 5px;
+    margin-bottom: 1em;
+}
+div#warn
+{
+    border: 1px solid #900;
+    background: #d22;
+    padding: 5px;
+}
+
+.code
+{
+    font-family: "Courier New", monospace;
+    font-size: 12pt;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+pre.io
+{
+    border: 1px solid #ccc;
+    background: white;
+    padding: 5px;
+}
+
+pre.code
+{
+    border: 1px solid #ccc;
+    background: white;
+    padding: 5px;
+    margin-left: 30px;
+}
+
+body 
+{
+    background-color: #eee;
+    font-size: 12pt;
+    font-family: verdana;
+    margin: 15px;
+    padding: 15px;
+}
+
+h1 
+{
+    text-align: center;
+    font-family: times, "times new roman";
+    font-size: 18pt;
+}
+
+h2 
+{
+    font-size: 12pt;
+    font-family: garamond, verdana, arial;
+    margin-top: 30px;
+}
+
+h3
+{
+    font-size: 12pt;
+    font-family: garamond, verdana, arial;
+    margin-top: 0px;
+}
+
+p
+{
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+hr
+{
+    text-align: left;
+    width: 10%;
+}
+
+table#header
+{
+    width: 100%;
+    font-family: garamond, arial, verdana;
+    font-size: 12pt;
+}
+
+table#header td.judul
+{
+    text-align: right;
+    font-weight: bold;
+}
+
+table#header td
+{
+    padding: 0px 5px 0px 5px;
+    width: 50%;
+}
+</style>
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 25 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title>Function</title>
+</head><body>
+
+<!-- title -->
+<h1>Function</h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0111.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Program untuk latihan ini harus membaca
+sebuah bilangan N dan mengeluarkan nilai N! (N faktorial).
+Jika N berada dalam jangkauan 0 hingga 10, keluarkan nilai
+N!.  Jika N negatif atau lebih besar dari 10, keluarkan 'ditolak'.
+Catatan: 0! = 1.
+</p>
+<p>
+Kali ini akan diperkenalkan konsep function atau fungsi.
+Struktur fungsi mirip dengan prosedur, tetapi fungsi dapat
+mengembalikan suatu nilai untuk si pemanggil fungsi tersebut.
+Struktur fungsi secara umum adalah seperti berikut ini:
+</p>
+<pre class="code">
+function &lt;nama&gt;(&lt;daftar parameter&gt;): &lt;return type&gt;;
+&lt;daftar deklarasi&gt;
+begin
+  &lt;perintah-perintah&gt;
+end;
+</pre>
+<p>
+Contohnya, untuk menyelesaikan latihan ini, kita dapat membuat
+fungsi seperti berikut ini:
+</p>
+<pre class="code">
+function Faktorial(n: integer): longint;
+var
+    i: integer;
+    bil: longint;
+begin
+    bil := 1;
+    for i := 1 to n do
+        bil := bil * i;
+    Faktorial := bil;
+end;
+</pre>
+<p>
+Dan kode program yang memanggilnya sebagai berikut:
+</p>
+<pre class="code">
+var
+    bil: integer;
+begin
+    readln(bil);
+    if (n &gt;= 0) and (n &lt;= 10) then
+        writeln(Faktorial(bil))
+    else
+        writeln('ditolak');
+end.
+</pre>
+<p>
+Program ini akan membaca sebuah integer dari input dan menyimpannya
+di dalam variabel <span class="code">bil</span>.  Setelah itu,
+jika <span class="code">bil</span> ada di dalam jangkauan 1 hingga 10,
+Faktorial dari <span class="code">bil</span> akan dituliskan ke layar.
+Sudah dikatakan bahwa sebuah fungsi akan mengembalikan suatu nilai.
+Karena <span class="code">&lt;return type&gt;</span> adalah
+<span class="code">integer</span>,
+maka nilai yang dikembalikan oleh fungsi Faktorial bertipe integer.
+</p>
+<p>
+Ketika fungsi Faktorial dipanggil oleh kode di atas, nilai variabel
+<span class="code">bil</span> "dimasukkan" ke dalam variabel
+<span class="code">n</span> di dalam fungsi Faktorial.  Setelah
+itu, fungsi Faktorial akan menghitung nilai faktorial dari
+<span class="code">n</span> dengan menggunakan sebuah variabel
+pembantu bernama <span class="code">bil</span> lagi.
+</p>
+<p>
+Namun, sekarang ada dua variabel <span class="code">bil</span>,
+satu di dalam fungsi Faktorial dan satu di dalam program utama.
+Tetapi kita tidak perlu kuatir, karena meskipun memiliki nama
+yang sama, kedua variabel ini dianggap sebagai dua variabel
+yang berbeda.  Variabel yang dideklarasikan di program utama
+disebut "global variable", dan yang dideklarasikan di dalam
+fungsi / prosedur disebut "local variable".  Lebih dari itu,
+beberapa fungsi dan prosedur yang berbeda bisa memiliki
+local variable-nya sendiri-sendiri dan bisa memiliki nama
+yang sama, tetapi dua variabel akan dianggap berbeda jika
+dideklarasikan pada scope (tempat) yang berbeda.
+</p>
+<p>
+Perhatikan juga perintah <span class="code">Faktorial := bil;</span>
+yang berada di akhir fungsi Faktorial.  Perintah ini menyatakan bahwa
+nilai variabel <span class="code">bil</span> menjadi nilai yang akan
+dikembalikan oleh fungsi Faktorial setelah fungsi tersebut selesai.
+</p>
+<p>
+Jadi, misalnya perintah <span class="code">writeln(Faktorial(4));</span>
+akan mengeluarkan hasil yang sama dengan perintah
+<span class="code">writeln(24);</span>.  Secara umum,
+fungsi biasanya digunakan
+untuk membuat program lebih terstruktur, atau untuk menghindari
+menuliskan kode berulang kali.
+</p>
+<p>
+Kita juga dapat membuat sebuah fungsi lain yang bernama
+Valid sebagai berikut:
+</p>
+<pre class="code">
+function Valid(n: integer): boolean;
+begin
+    Valid := (n &gt;= 0) and (n &lt;= 10);
+end;
+</pre>
+<p>
+dan digunakan di program utama sebagai berikut:
+</p>
+<pre class="code">
+var
+    bil: integer;
+begin
+    readln(bil);
+    if (Valid(bil)) then
+        writeln(Faktorial(bil))
+    else
+        writeln('ditolak');
+end.
+</pre>
+<p>
+Jadi fungsi Valid akan mengembalikan nilai
+<span class="code">true</span> atau <span class="code">false</span>,
+tergantung nilai <span class="code">n</span>
+(yang diperoleh dari nilai <span class="code">bil</span>).
+Program ini akan mengeluarkan keluaran yang sama dengan program
+sebelumnya.
+</p>
+<p>
+Ada satu konsep lagi yang akan dikenalkan, yaitu konsep
+fungsi rekursif (ada juga prosedur rekursif).  Sebuah fungsi rekursif
+adalah fungsi yang memanggil dirinya sendiri, dan struktur ini
+sering dipakai dan memiliki banyak kegunaan.
+Contoh fungsi rekursif adalah sebagai berikut:
+</p>
+<pre class="code">
+function Faktorial(n: integer): longint;
+begin
+    if (n = 0)
+        Faktorial := 1
+    else
+        Faktorial := n * Faktorial (n - 1);
+end;
+</pre>
+<p>
+Tentu <span class="code">Faktorial(0)</span> akan mengembalikan hasil 1,
+seperti yang diharapkan.  Bagaimana jika <span class="code">Faktorial(1)</span>
+dipanggil?  Fungsi Faktorial akan melakukan perintah
+<span class="code">Faktorial := 1 * Faktorial(0);</span>, sehingga pada
+akhirnya fungsi ini akan mengembalikan hasil 1.  Jika
+<span class="code">Faktorial(n)</span> dipanggil, fungsi ini akan
+melakukan perintah <span class="code">Faktorial := n * Faktorial(n - 1)</span>
+dan setelah itu, fungsi ini akan dipanggil lagi dengan parameter
+<span class="code">n</span> yang lebih kecil daripada sebelumnya.
+Fungsi Faktorial dipanggil terus-menerus oleh dirinya sendiri sampai
+nilai <span class="code">n</span> menjadi 0 dan fungsi ini berhenti
+memanggil dirinya sendiri.  Pada akhirnya, nilai yang dikeluarkan oleh
+<span class="code">Faktorial(n)</span> adalah
+<span class="code">n * (n - 1) * (n - 2) * ... * 1</span>,
+yang merupakan hasil yang benar.
+</p>
+<p>
+Namai program tersebut dengan nama pjj0111 dan simpanlah
+dengan nama 'pjj0111.PAS'.
+ </p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 1</h2>
+<pre class="io">
+4
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 1</h2>
+<pre class="io">
+24
+</pre>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 2</h2>
+<pre class="io">
+11
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 2</h2>
+<pre class="io">
+ditolak
+</pre>
+</div>
+
+
+</body></html>

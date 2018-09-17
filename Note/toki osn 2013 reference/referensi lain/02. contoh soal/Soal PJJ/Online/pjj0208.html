@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 23 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title>Rata-rata</title>
+</head><body>
+
+<!-- title -->
+<h1>Rata-rata</h1>
+
+<!-- author -->
+<div id="penulis"></div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0208.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Anda sudah pernah belajar statistika?
+Jika diketahui sejumlah N bilangan:
+x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>N</sub>,
+yang masing-masing merupakan hasil pengukuran,
+misalnya nilai-nilai pelajaran Y siswa-siswa di kelas anda,
+maka untuk mengetahui kecenderungan nilai-nilai tersebut
+digunakan besaran-besaran seperti:
+harga terkecil, harga terbesar, harga rata-rata, dsb.,
+yang diperoleh dari perhitungan.
+</p>
+
+<p>Harga terkecil adalah salah satu dari N bilangan
+di atas yang mana tidak ada bilangan lain yang lebih kecil
+dari padanya.</p>
+
+<p>Harga terbesar adalah salah satu dari N bilangan
+di atas yang mana tidak ada bilangan lain yang lebih besar
+dari padanya.</p>
+
+<p>Harga rata-rata adalah jumlah dari N bilangan tersebut
+dibagi dengan N.</p>
+
+<p>Buatlah program yang membaca masukan dari standard input,
+menghitung besaran-besaran tersebut, dan menuliskan
+keluaran ke standard output.</p>
+
+</div>
+
+<!-- input format -->
+<div id="inputformat"> 
+<h2> FORMAT MASUKAN </h2>
+<p>Baris pertama berisi bilangan bulat N (1 &le; N &le; 10000),
+diikuti N buah bilangan real.  Baris ke-(i+1) berisi
+bilangan x<sub>i</sub> (-1000000.00 &le; x<sub>i</sub> &le; +1000000.00)
+dengan dua digit di belakang tanda desimal
+(tanda desimal menggunakan titik mengikuti standar penulisan di Pascal).
+Dipastikan tidak akan ada kesalahan dalam file masukan
+sehingga program anda tidak perlu memeriksa adanya kesalahan
+penulisan file masukan.</p>
+<p>
+Catatan: Cara membaca bilangan real pada Pascal sama dengan cara
+membaca bilangan bulat.
+</p>
+</div>
+
+
+<!-- output format -->
+<div id="outputformat"> 
+<h2>FORMAT KELUARAN </h2>
+<p>Keluarkan dalam satu baris: bilangan terkecil,
+bilangan terbesar, dan rata-rata,
+dipisahkan dengan satu spasi.
+Bilangan rata-rata dibulatkan ke dua digit di belakang tanda desimal.
+Pada Pascal ada perintah khusus untuk mengeluarkan bilangan real
+dibulatkan ke L digit di belakang tanda desimal, yaitu dengan perintah
+<span class="code">writeln(r:0:L);</span>
+di mana <span class="code">r</span> adalah variabel bilangan real dan
+<span class="code">L</span> adalah banyak digit di belakang tanda
+desimal.  Untuk program ini Anda dapat menggunakan
+<span class="code">writeln(r:0:2);</span>.
+</p>
+</div>
+
+<!-- sample input -->
+<div class="sampleinput"> 
+<h2>CONTOH MASUKAN 1</h2>
+<pre class="io">
+10
+297536.26
+526260.62
+828177.56
+-45559.92
+978715.10
+383672.24
+467737.00
+67692.93
+-765057.71
+790913.04
+</pre>
+</div>
+
+<!-- sample output -->
+<div class="sampleoutput"> 
+<h2>CONTOH KELUARAN 1</h2>
+<pre class="io">
+-765057.71 978715.10 353008.71
+</pre>
+</div>
+
+<!-- sample input -->
+<div class="sampleinput"> 
+<h2>CONTOH MASUKAN 2</h2>
+<pre class="io">
+30
+-810984.36
+-579222.13
+-117867.17
+849146.53
+-109313.71
+852713.84
+925273.01
+-471109.60
+-344732.29
+806856.12
+556582.16
+616013.89
+295053.48
+142864.77
+-502461.22
+-248941.25
+-429372.21
+-441792.48
+-421294.55
+888891.92
+230231.19
+-476848.18
+-703358.42
+739601.31
+47096.13
+953740.58
+-891076.69
+-841539.26
+-334396.20
+317560.98
+</pre>
+</div>
+
+<!-- sample output -->
+<div class="sampleoutput"> 
+<h2>CONTOH KELUARAN 2</h2>
+<pre class="io">
+-891076.69 953740.58 16577.21
+</pre>
+</div>
+
+</body></html>

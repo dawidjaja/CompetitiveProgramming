@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 4 Juli 2008 -->
+
+
+  <!-- browser title -->
+  <title> TEKS : Binary Search </title>
+</head><body>
+
+<!-- title -->
+<h1> TEKS : Binary Search </h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Diberikan sebuah array of integer <span class="code">A</span>, yang
+elemen-elemennya diberi index 1 sampai dengan <span class="code">N</span>.
+Misalkan Anda harus mencari elemen bernilai
+<span class="code">x</span>.  Berapa lama waktu yang dibutuhkan?
+Tentu saja jika elemen di dalam array A tidak beraturan, kita
+harus mengecek A dari depan sampai belakang, berharap menemukan x.
+</p>
+<p>
+Namun, kali ini kita diberikan array A yang elemen-elemennya sudah
+terurut dari kecil ke besar.  Apakah kita masih harus mengecek
+elemen-elemen A dari depan sampai belakang?  Tidak perlu.
+Binary search adalah sebuah algoritma standar untuk menemukan
+suatu elemen dalam sorted array (array terurut) dalam waktu
+O(log N).
+</p>
+<p>
+Ide binary search adalah seperti ini: Misalkan A memiliki 100 elemen
+dan kita ingin mencari x = 10.  Jika A[50] = 15, maka kita tahu
+bahwa x tidak mungkin berada di index 51..100, jadi kita hanya perlu
+mencari di index 1..49 saja.  Algoritma binary search menggunakan
+fungsi rekursif:
+</p>
+<pre class="code">
+// fungsi ini akan mengembalikan index dari nilai x yang ditemukan,
+// dan akan mengembalikan 0 jika x tidak ditemukan
+// a: index terkiri
+// b: index terkanan
+// x: yang dicari
+
+function BinarySearch(a, b, x: integer);
+var
+    m: integer;
+begin
+    if (a = b) and (A[a] = x) then
+        BinarySearch := a;
+    else if (a &lt= b) then
+        BinarySearch := 0;
+    else
+    begin
+        m := (a + b) div 2;
+        
+        if (x = A[m]) then
+            BinarySearch := m;
+        else if (x &lt; A[m]) then
+            BinarySearch := BinarySearch(a, m - 1, x);
+        else
+            BinarySearch := BinarySearch(m + 1, b, x);
+    end;
+end;
+</pre>
+<p>
+Pada algoritma di atas ada beberapa basis.  Jika
+<span class="code">b &lt;= a</span> maka hanya ada maksimum 1 elemen
+yang menjadi tempat pencarian.  Pada kasus ini, kembalikan nilai 0
+jika elemen itu tidak bernilai x, dan kembalikan index jika elemen di
+index tersebut bernilai x.
+</p>
+<p>
+Jika ada 2 atau lebih elemen yang menjadi tempat pencarian, ambil
+elemen yang berada di tengah (di posisi
+<span class="code">m</span>).  Setelah itu, panggil BinarySearch
+secara rekursif, tergantung dari bagian mana dari array yang
+akan dicari, kiri atau kanan.
+</p>
+<p>
+Di bawah ini adalah ilustrasi binary search.
+Elemen pada index m ditandai dengan kotak biru.  Pada setiap pemanggilan
+BinarySearch, daerah pencarian dikurangi menjadi hanya setengah
+dari daerah pencarian awal.  Dengan demikian, banyak bilangan yang
+kita bandingkan dengan x berbanding lurus dengan log<sub>2</sub> N
+(atau dengan notasi bahasa Indonesia <sup>2</sup>log N).
+</p>
+<img src="pjj_bsearch_files/bsearch.gif" title="binary search" />
+</div>
+
+
+
+</body></html>

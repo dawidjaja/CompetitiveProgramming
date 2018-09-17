@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 30 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title> Pesta Bebek </title>
+</head><body>
+
+<!-- title -->
+<h1> Pesta Bebek </h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0408.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Pak Dengklek tahun ini terpilih menjadi tuan rumah Pesta Bebek.
+Pesta tersebut akan dihadiri oleh semua pemilik bebek ternama di Indonesia.
+Pada acara tersebut, setiap tamu yang baru hadir akan diberikan sebuah
+nomor (yang kemudian mungkin akan dijadikan nomor undian) yang merupakan
+posisi namanya di daftar tamu yang sudah hadir (daftar tersebut diurutkan berdasarkan
+urutan kamus tanpa membedakan huruf besar dan huruf kecil).
+</p>
+<p>
+Jadi, simpelnya, setiap kali ada tamu yang baru hadir, nama tamu yang sudah hadir (termasuk
+yang baru hadir) akan diurutkan, dan tamu yang baru hadir tersebut akan mendapatkan nomor sesuai
+posisi namanya di urutan tamu yang sudah hadir.
+</p>
+<p>
+Diberikan daftar urutan hadir semua tamu Pesta Bebek, tentukanlah
+nomor yang didapatkan setiap tamu.
+</p>
+</div>
+
+<!-- input format -->
+<div id="inputformat"> 
+<h2> FORMAT MASUKAN </h2>
+<p>
+Baris pertama berisi sebuah bilangan bulat N (1 &le; N &le; 1000). 
+N baris berikutnya berisi masing-masing nama tamu sesuai dengan urutan hadirnya
+(pada saat tamu ke-i hadir, tamu ke-1 sampai ke-(i-1) tentunya sudah hadir, dan tamu
+ke-(i+1) sampai ke-N tentunya belum hadir). Tidak ada dua tamu yang hadir secara bersamaan dan tidak ada
+dua tamu yang memiliki nama sama persis. Nama tersebut hanya akan berisi karakter 'a'..'z', 'A'..'Z', dan
+spasi (pada kamus, spasi muncul terlebih dahulu dibanding semua karakter alfabet) dengan jumlah maksimal
+20 karakter.
+</p>
+</div>
+
+<!-- output format -->
+<div id="outputformat"> 
+<h2>FORMAT KELUARAN </h2>
+<p>
+N baris masing-masing berisi sebuah bilangan bulat yang 
+merupakan nomor tamu yang datang pada urutan tersebut.
+</p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 1</h2>
+<pre class="io">
+5
+BUDI
+ANI R
+ANISA
+ANDI
+TARZAN
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 1</h2>
+<pre class="io">
+1
+1
+2
+1
+5
+</pre>
+</div>
+
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 2</h2>
+<pre class="io">
+3
+ANDI
+BUDI
+TARZAN
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 2</h2>
+<pre class="io">
+1
+2
+3
+</pre>
+</div>
+
+<!-- explanation -->
+<div id="exp">
+<h3> Penjelasan </h3>
+<p>
+Pada contoh pertama, saat BUDI datang, dia hanya sendirian, tentunya dia mendapatkan nomor 1.
+Saat ANI R datang, menurut urutan kamus ia muncul terlebih dahulu sebelum BUDI,
+sehingga ANI R mendapatkan nomor 1.
+Saat ANISA datang, menurut urutan kamus ia muncul terlebih dahulu sebelum BUDI tapi muncul setelah ANI R, sehingga
+ANISA mendapat nomor 2.
+Begitu selanjutnya sampai TARZAN mendapatkan nomor 5.
+</p> 
+</div>
+
+</body></html>

@@ -1,0 +1,374 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<style>
+div#penulis
+{
+    text-align: right;
+    font-family: garamond, arial, verdana;
+    font-size: 12pt;
+}
+
+div#exp
+{
+    border: 1px solid #0cc;
+    background: #adc;
+    padding: 5px;
+    margin-bottom: 1em;
+}
+div#warn
+{
+    border: 1px solid #900;
+    background: #d22;
+    padding: 5px;
+}
+
+.code
+{
+    font-family: "Courier New", monospace;
+    font-size: 12pt;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+pre.io
+{
+    border: 1px solid #ccc;
+    background: white;
+    padding: 5px;
+}
+
+pre.code
+{
+    border: 1px solid #ccc;
+    background: white;
+    padding: 5px;
+    margin-left: 30px;
+}
+
+body 
+{
+    background-color: #eee;
+    font-size: 12pt;
+    font-family: verdana;
+    margin: 15px;
+    padding: 15px;
+}
+
+h1 
+{
+    text-align: center;
+    font-family: times, "times new roman";
+    font-size: 18pt;
+}
+
+h2 
+{
+    font-size: 12pt;
+    font-family: garamond, verdana, arial;
+    margin-top: 30px;
+}
+
+h3
+{
+    font-size: 12pt;
+    font-family: garamond, verdana, arial;
+    margin-top: 0px;
+}
+
+p
+{
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+hr
+{
+    text-align: left;
+    width: 10%;
+}
+
+table#header
+{
+    width: 100%;
+    font-family: garamond, arial, verdana;
+    font-size: 12pt;
+}
+
+table#header td.judul
+{
+    text-align: right;
+    font-weight: bold;
+}
+
+table#header td
+{
+    padding: 0px 5px 0px 5px;
+    width: 50%;
+}
+</style>
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 25 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title>TEKS : Kebiasaan Programming yang Baik 1</title>
+</head><body>
+
+<!-- title -->
+<h1>TEKS : Kebiasaan Programming yang Baik 1 </h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Pada artikel ini, ada 4 hal yang akan dibahas, yaitu:
+</p>
+<ol>
+<li>Indentasi dan spacing</li>
+<li>Komentar</li>
+<li>Konstanta</li>
+<li>Modularisasi</li>
+</ol>
+<p>
+Hal-hal di atas pada dasarnya berkaitan dengan kerapihan program
+dan seberapa mudah program dibaca.
+Di dalam kompetisi OSN, sebetulnya hal-hal ini tentu tidak akan
+dinilai, sehingga penjelasan di dalam artikel ini
+tidak harus diikuti.  Hal-hal ini dituliskan untuk menambah
+wawasan saja.</p>
+
+<h2>Indentasi dan spacing</h2>
+<p>Indentasi adalah menambahkan spasi di awal baris-baris program
+agar program mudah dibaca, sedangkan "spacing" adalah penambahan
+spasi pada kode, misalnya di antara dua parameter, di sekitar
+operator, dan lain-lain.  Tujuannya sama, yaitu untuk membuat
+program lebih mudah dibaca.</p>
+<p>
+Contoh program tanpa indentasi dan tanpa spacing:
+</p>
+<pre class="code">
+var
+n:integer;
+i:integer;
+begin
+readln(n);
+for i:=1 to n do
+begin
+if(i=93)then
+begin
+writeln('ERROR');
+break;
+end;
+if(i mod 10=0)then
+continue;
+writeln(i);
+end;    
+end.</pre>
+<p>
+Contoh program dengan indentasi tetapi tanpa spacing:
+</p>
+<pre class="code">
+var
+    n:integer;
+    i:integer;
+begin
+    readln(n);    
+    for i:=1 to n do
+    begin
+        if(i=93)then
+        begin
+            writeln('ERROR');
+            break;
+        end;
+        if(i mod 10=0)then
+            continue;
+        writeln(i);
+    end;    
+end.</pre>
+<p>
+Contoh program dengan indentasi dan dengan spacing:
+</p>
+<pre class="code">
+var
+    n: integer;
+    i: integer;
+begin
+    readln(n);
+    
+    for i := 1 to n do
+    begin
+        if (i = 93) then
+        begin
+            writeln('ERROR');
+            break;
+        end;
+        if (i mod 10 = 0) then
+            continue;
+        
+        writeln(i);
+    end;    
+end.</pre>
+
+
+<h2>Komentar</h2>
+<p>Komentar tidak terlalu berguna untuk membuat program-program
+yang cukup pendek.  Untuk program-program yang panjang, sering kali
+otak kita tidak mampu untuk mengingat dan memahami seluruh
+program, sehingga kadang-kadang kita memerlukan catatan.
+Untungnya, kita bisa menulis catatan di mana pun di dalam
+program, pada Pascal dengan tanda
+<span class="code">{ ... }</span>,
+<span class="code">(* ... *)</span>, atau
+<span class="code">//...</span>.
+Contohnya:
+</p>
+<pre class="code">
+{
+  Program ini akan mengembalikan nilai faktorial dari
+  integer yang dibaca dari input, hanya jika integer
+  yang dibaca berada pada jangkauan 1..10
+}
+
+function Valid(n: integer): boolean;
+begin
+    Valid := (n &gt;= 0) and (n &lt;= 10);
+end;
+
+
+// n tidak boleh negatif
+//
+function Faktorial(n: integer): integer;
+var
+    i: integer;
+    bil: integer;
+begin
+    bil := 1;
+    for i := 1 to n do
+        bil := bil * i;
+    Faktorial := bil;
+end;
+
+
+var
+    bil: integer;
+begin
+    readln(bil);
+    if (Valid(bil)) then
+        writeln(Faktorial(bil));
+    else
+        writeln('ditolak'); // cek lagi, apakah d-nya huruf besar atau kecil?
+end.
+</pre>
+
+<h2>Konstanta</h2>
+<p>
+Konstanta adalah suatu tempat menyimpan sebuah nilai, dan nilai itu
+tidak dapat diubah-ubah selama berjalannya program.  Sebuah konstanta
+dapat dideklarasi dengan cara yang mirip dengan cara mendeklarasi
+variabel.  Contoh deklarasi konstanta:
+</p>
+<pre class="code">
+const
+    maksimum = 1000;
+    minimum = -1000;
+    N = 2345;
+    nama = 'Pak Dengklek';
+</pre>
+<p>Setelah itu, konstanta-konstanta tersebut dapat digunakan seperti
+variabel biasa.  Namun, konstanta tidak bisa diberikan nilai baru.</p>
+<p>Konstanta memiliki banyak kegunaan, tetapi keguanaan utamanya adalah
+untuk menghindari menulis nilai yang sama secara berulang-ulang.
+Misalnya, jika Anda memiliki program:
+</p>
+<pre class="code">
+var
+    i: integer;
+begin
+    for i := 1 to 1000 do
+        writeln('Saya berjanji tidak akan nyontek lagi');
+    for i := 1 to 1000 do
+        writeln('Saya minta maaf pada Pak Tono');
+    for i := 1 to 1000 do
+        writeln('Saya minta maaf pada Ibu Tini');
+    for i := 1 to 1000 do
+        writeln('Saya minta maaf pada Pak Budi');
+    for i := 1 to 1000 do
+        writeln('Saya minta maaf pada Ibu Ani');
+    for i := 1 to 1000 do
+        writeln('Saya minta maaf pada Pak Dengklek');
+    for i := 1 to 1000 do
+        writeln('Saya minta maaf pada Ibu Ina');
+end.
+</pre>
+<p>lalu kemudian Anda disuruh menulis setiap pernyataan sebanyak
+1500 kali, dan bukan 1000 kali, maka Anda harus mengganti
+semua 1000 dengan 1500.</p>
+<p>Pemakaian konstanta menghindari hal ini.  Misalnya, Anda
+dapat menggunakan konstanta sebagai berikut:</p>
+<pre class="code">
+const
+    banyak = 1500;
+var
+    i: integer;
+begin
+    for i := 1 to banyak do
+        writeln('Saya berjanji tidak akan nyontek lagi');
+    for i := 1 to banyak do
+        writeln('Saya minta maaf pada Pak Tono');
+    for i := 1 to banyak do
+        writeln('Saya minta maaf pada Ibu Tini');
+    for i := 1 to banyak do
+        writeln('Saya minta maaf pada Pak Budi');
+    for i := 1 to banyak do
+        writeln('Saya minta maaf pada Ibu Ani');
+    for i := 1 to banyak do
+        writeln('Saya minta maaf pada Pak Dengklek');
+    for i := 1 to banyak do
+        writeln('Saya minta maaf pada Ibu Ina');
+end.
+</pre>
+<p>Dengan konstanta, jika Anda harus mengganti banyak penulisan
+dari 1500 menjadi angka lainnya, Anda tinggal mengganti nilai konstanta
+pada deklarasinya saja.</p>
+<h2>Modularisasi</h2>
+<p>Modularisasi adalah menstrukturisasi program sehingga terbagi
+menjadi bagian-bagian kecil yang lebih mudah dimengerti.
+Misalnya, jika Anda memiliki program
+yang sangat panjang, Anda dapat membagi program itu ke dalam
+beberapa fungsi dan beberapa prosedur yang sering digunakan,
+sehingga program utama menjadi lebih pendek dan lebih mudah dibaca.
+Namun, biasanya soal-soal OSN tidak memerlukan kode yang terlalu
+panjang.</p>
+<p>Sebagai contoh, sebuah program yang sangat panjang
+mungkin dapat disingkat dengan fungsi dan prosedur,
+menjadi seperti ini:</p>
+<pre class="code">
+var
+    i: integer;
+    harga, jumlah, total, uang, kembalian: integer;
+begin
+    TransaksiBaru(total);
+    while (MasihAdaTransaksi())
+    begin
+        Transaksi(harga, jumlah);
+        TambahKeTotal(total, harga, jumlah);
+    end;
+    TerimaUang(uang);
+    BeriKembalian(HitungKembalian(uang, total, HitungDiskon(total)));
+    UcapkanTerimaKasih();
+end.
+</pre>
+
+</div>
+
+</body></html>

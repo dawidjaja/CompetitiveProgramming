@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 30 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title> Jawbreaker 1: Menghitung Skor </title>
+</head><body>
+
+<!-- title -->
+<h1> Jawbreaker 1: Menghitung Skor </h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0309.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Anda mungkin pernah melihat permainan komputer berikut ini,
+bahkan mungkin pernah memainkannya.  Di depan anda terdapat
+sejumlah bola dari berbagai warna, dengan banyak warna
+yang berbeda adalah tertentu.
+Bola-bola tersebut tersusun dalam suatu matriks
+M x N dan ditempatkan secara acak dalam matriks.
+Pemain dapat "mengambil" sejumlah bola berwarna sama
+sekaligus (minimal dua bola) asalkan bola-bola tersebut
+tersebut dalam satu rangkaian. Bola-bola dalam satu
+rangkaian didefinisikan sbb:
+</p>
+<p>
+'*' adalah bola yang akan dipilih (atau ikut terpilih)
+dan '+' adalah bola yang berwarna sama dengan '*'.
+Jika '+' berada tepat di bawah atau di samping kiri atau
+di samping kanan atau di atas '*', maka '+' ikut terpilih
+dan diganti dengan tanda '*'.  Begitu seterusnya sampai
+tidak ada lagi tanda '+' yang dapat diganti dengan tanda '*'.
+Jika Anda memperoleh T bola dalam satu pengambilan maka
+Anda mendapat nilai T(T-1).
+Karena paling sedikit ada dua bola yang Anda ambil
+sekaligus maka tentu nilai minimal yang didapat adalah 2.
+</p>
+<p>
+Berikut ini contoh-contohnya:</p>
+<p>
+<table border="1" width="500">
+  <tr>
+  <td>Contoh dengan dua rangkaian bola</td>
+  <td>'*' adalah bola yang dipilih</td>
+  <td>Semua yang ikut terpilih bertanda '*', dan yang tidak '+'</td>
+  <td>Nilai yang didapatkan</td>
+  </tr>
+  <tr>
+    <td>
+<pre>
+-------
+-+++---
+-+-++--
+-----+-
+</pre>
+    </td>
+    <td>
+<pre>
+-------
+-*++---
+-+-++--
+-----+-
+</pre>
+    </td>
+    <td>
+<pre>
+-------
+-***---
+-*-**--
+-----+-
+</pre>
+    </td>
+    <td>
+	30
+    </td>
+  </tr>
+  <tr>
+    <td>
+<pre>
+----++-
+-+++---
+--++---
+---+++-
+</pre>
+    </td>
+    <td>
+<pre>
+----++-
+-+++---
+--++---
+---*++-
+</pre>
+    </td>
+    <td>
+<pre>
+----++-
+-***---
+--**---
+---***-
+</pre>
+    </td>
+    <td>
+	56
+    </td>
+  </tr>
+  <tr>
+    <td>
+<pre>
+-+-----
+-+++---
+-++-++-
+--++-+-
+</pre>
+    </td>
+    <td>
+<pre>
+-+-----
+-+++---
+-++-+*-
+--++-+-
+</pre>
+    </td>
+    <td>
+<pre>
+-+-----
+-+++---
+-++-**-
+--++-*-
+</pre>
+    </td>
+    <td>
+	6
+    </td>
+  </tr>
+</table>
+</p>
+<p>
+Dalam permainan komputer yang sebenarnya, tentu ada
+cerita selanjutnya, yaitu bahwa Anda harus memilih bola
+yang lain lagi dan mengambil sekumpulan bola
+sehingga anda bisa mendapatkan total
+nilai sebesar-besarnya.  Pengambilan tersebut
+mengubah struktur bola pada matriks.  Lalu Anda melakukan
+pengambilan berikutnya, dan seterusnya hingga
+tidak ada lagi bola yang dapat diambil.
+</p>
+<p>
+Kali ini Anda hanya diminta untuk membuat program yang
+melakukan penghitungan nilai yang akan Anda peroleh
+berdasarkan data susunan matriks bola dan sebuah bola yang dipilih.
+</p>
+</div>
+
+<!-- input format -->
+<div id="inputformat"> 
+<h2> FORMAT MASUKAN </h2>
+<p>
+Baris pertama berisi dua bilangan M dan N
+(4 &le; M, N &le; 25) yang dipisahkan spasi
+yang menyatakan jumlah baris dan jumlah kolom.
+M baris berikutnya berisi susunan bola, dan pada setiap baris
+terdapat N bilangan bulat yang dapat berharga 1 sampai dengan 5
+(yang menyatakan warna bola), dipisahkan oleh sebuah spasi.
+Baris terakhir berisi 2 buah bilangan, B dan K
+(0 &le; B &le; M - 1 dan 0 &le; K &le; N - 1), yang menyatakan
+nomor baris dan nomor kolom dari bola yang akan dipilih.
+Kolom pertama dan baris pertama diberi nomor 0,
+sehingga bola di pojok kiri atas memiliki lokasi (0, 0)
+dan di pojok kanan bawah memiliki lokasi (M - 1, N - 1).
+</p>
+</div>
+
+<!-- output format -->
+<div id="outputformat"> 
+<h2>FORMAT KELUARAN </h2>
+<p>
+Program anda hanya mengoutputkan satu angka, yaitu nilai
+sebagai hasil pemilihan bola pada data masukan tersebut.
+Jika bola yang dipilih tidak memiliki rentetan karena tidak
+ada bola yang berwarna sama di sekitarnya maka anda
+mengoutputkan bilangan 0.
+</p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 1</h2>
+<pre class="io">
+4 7
+3 3 4 2 4 3 5
+2 1 1 1 3 5 5
+3 1 4 1 1 4 5
+3 3 4 3 3 1 5
+1 1
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 1</h2>
+<pre class="io">
+30 
+</pre>
+</div>
+
+<h2>CONTOH MASUKAN 2</h2>
+<pre class="io">
+4 7
+1 1 1 1 2 2 1
+1 2 2 2 1 1 1
+3 3 2 2 4 4 4
+3 3 3 2 2 2 4
+3 3
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 2</h2>
+<pre class="io">
+56
+</pre>
+</div>
+
+<h2>CONTOH MASUKAN 3</h2>
+<pre class="io">
+4 7
+1 1 1 1 1 1 1
+2 5 5 5 2 2 2
+3 5 5 1 5 5 1
+3 3 5 5 1 5 1
+2 5
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 3</h2>
+<pre class="io">
+6
+</pre>
+</div>
+
+<!-- explanation -->
+<div id="exp">
+<h3> Penjelasan </h3>
+<p>
+Semua contoh masukan sesuai dengan contoh-contoh yang diberikan di
+deskripsi soal.
+</p> 
+</div>
+
+<div id="exp">
+<h3> Tips </h3>
+<p>
+Program dapat menggunakan sebuah array global dua dimensi,
+yang menyimpan apakah setiap posisi (x, y) sudah pernah
+dikunjungi atau belum.
+</p> 
+</div>
+
+
+</body></html>

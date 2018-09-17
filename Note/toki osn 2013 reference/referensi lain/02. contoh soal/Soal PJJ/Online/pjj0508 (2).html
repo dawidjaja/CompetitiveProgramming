@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 30 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title> Tebak Lagu </title>
+</head><body>
+
+<!-- title -->
+<h1> OSN 2006 : Tebak Lagu </h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0508.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 32 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Pak Dengklek dan bebek-bebeknya punya permainan baru, yaitu tebak lagu. Sesuai namanya, dalam
+permainan ini salah satu bebek akan menyanyikan fragmen/potongan sebuah lagu untuk kemudian
+ditebak oleh Pak Dengklek. Karena tahu bahwa Pak Dengklek bukanlah seorang penghafal yang
+handal, para bebek menyiapkan sebuah buku yang berisikan daftar lagu yang akan mereka
+nyanyikan, lengkap dengan nadanya.
+Seperti halnya manusia, para bebek tidak menyanyi dengan ketinggian nada yang sama satu sama
+lain. Oleh sebab itu, mereka sepakat untuk menuliskan nada-nada lagu di buku lagu mereka dalam
+nada dasar C tengah (C4 pada piano manusia, yang mereka beri simbol c.), yaitu nada dengan
+frekuensi 261.6 Hz. Untuk nada-nada yang lain, perhatikan daftar lengkap nada, simbol, dan
+frekuensi yang digunakan oleh para bebek (terurut menaik berdasar ketinggian nada), yang
+diberikan pada tabel di bawah ini:
+</p>
+<p>
+<img src="pjj0508/image1.png" title="maze"></img>
+</p>
+<p>
+Sebagai contoh, misalkan ada dua bebek (bebek Kwek dan bebek Kwak) yang akan menyanyikan
+sebuah lagu yang sama. Bebek Kwek menyanyikan lagu tersebut dalam nada dasar D4 (d.) dan
+bebek Kwak menyanyikannya dalam nada dasar E4 (e.). Rangkaian nada yang mereka nyanyikan
+adalah:
+<br>
+Bebek Kwek: d.e.f#e.d.
+<br>
+Bebek Kwak: e.f#g#f#e.
+<br>
+Sedangkan dalam buku lagu mereka, lagu tersebut akan dituliskan sebagai c.d.e.d.c..
+Karena perbedaan nada dasar itulah, meski dapat mengenali nada dengan sangat akurat, Pak
+Dengklek merasa kesulitan dalam menebak lagu apa yang para bebeknya nyanyikan. Karena itulah,
+Olimpiade Sains Nasional V Bidang Informatika
+Pak Dengklek meminta bantuan Anda untuk membuatkan sebuah program yang dapat mengetahui
+lagu mana yang dinyanyikan para bebek.
+Informasi yang akan Pak Dengklek berikan pada Anda adalah:
+<br>
+1. Potongan lagu yang didengar oleh Pak Dengklek (dengan nada dasar sesuai yang
+dinyanyikan bebek yang bersangkutan).
+<br>
+2. Banyaknya lagu yang ada pada buku lagu bebek.
+<br>
+3. Rangkaian nada dari lagu-lagu dalam buku lagu tersebut.
+</p>
+
+<!-- input format -->
+<div id="inputformat"> 
+<h2> FORMAT MASUKAN </h2>
+<p>
+Baris pertama berisikan serangkaian karakter yang merepresentasikan rangkaian nada yang ingin
+dicari (sesuai simbol pada tabel pada deskripsi soal). Baris kedua berupa sebuah integer n (1 <= n
+<= 100) yang menunjukkan banyaknya data lagu yang ada. n-baris berikutnya berisikan data lagu
+yang tersedia, masing-masing dalam satu baris. Tiap baris masukan rangkaian nada terdiri atas tidak
+lebih dari 250 karakter.
+</p>
+</div>
+
+<!-- output format -->
+<div id="outputformat"> 
+<h2>FORMAT KELUARAN </h2>
+<p>
+Nomor lagu yang di dalamnya terdapat rangkaian nada yang bersesuaian dengan nada yang dicari,
+atau # jika rangkaian nada yang dicari tidak ditemukan. Penomoran lagu dimulai dari 1 (i.e. baris
+setelah integer n pada masukan merupakan data lagu ke-1). Jika ada lebih dari satu lagu yang
+bersesuaian dengan potongan lagu yang diberikan, tuliskan lagu dengan nomor terkecil saja.
+</p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 1</h2>
+<pre class="io">
+g.g.g.f.e.d.c.
+6
+d.c.e.d.c.f.e.d.g.g.g.f.e.d.e.
+c.d.e.c#d.e.f#a.d.c.
+c.d#e.
+c.d.e.f.g.g.g.d.e.f.c.d.e.
+c.c#d.d#e.f.f#g.g#a.a#b.C.
+G.F.D#G#G.F.A#A#A#G#G.F.D#
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 1</h2>
+<pre class="io">
+6
+</pre>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 2</h2>
+<pre class="io">
+c.d.e.
+1
+C.D.C.
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 2</h2>
+<pre class="io">
+#
+</pre>
+</div>
+
+</body></html>

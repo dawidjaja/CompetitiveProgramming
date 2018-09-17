@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 30 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title> Maze </title>
+</head><body>
+
+<!-- title -->
+<h1> OSN 2005 : Maze </h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0505.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Anda tahu permainan maze? Kalau melihat gambar berikut ini pasti tahu. Dalam
+permainan maze ini makhluk yang digambarkan dengan bulatan wajah Mr Groovy
+harus mencari jalan ke luar dari grid maze yang diberikan.
+</p>
+<img src="pjj0505/image1.png" title="maze"></img>
+<p>
+Jalan keluar yang harus dilaluinya adalah kota-kotak yang berwarna kuning tsb.
+Masalahnya karena bisa terdapat beberapa cara untuk mencapai jalan keluar maka
+disini anda harus menemukan jumlah kotak yang paling sedikit dalam lintasan
+(menyatakan juga jumlah langkah terpendek untuk mencapai bagian luar). Dalam hal
+contoh maze di atas yang paling sedikit adalah 17 kotak/langkah yaitu yang berwana
+kuning tsb.
+</p>
+
+<!-- input format -->
+<div id="inputformat"> 
+<h2> FORMAT MASUKAN </h2>
+<p>
+Baris pertama berisikan b dan k yang menyatakan jumlah baris dan jumlah kolom
+matriks grid tersebut. Kedua bilangan dipisahkan satu spasi. Jumlah baris/kolom
+terkecil adalah 3 dan jumlah baris/kolom terbesar adalah 100. Pada b baris berikutnya
+maze didefinisikan sbb. Harga -1 menyatakan dinding yang tidak dapat ditembus,
+harga 0 menyatakan ruang yang dapat dilalui. Dipastikan sekurangnya ada satu jalan
+keluar. Setiap baris grid pada baris masukan tersendiri. Pada baris yang sama hargaharga
+tersebut dituliskan terpisah satu spasi dengan harga berikutnya. Pada baris
+terakhir terdapat dua bilangan a dan b yang menyakan posisi awal Mr Groovy berada,
+a nomor baris dan b nomor kolom dengan penomoran baris: 1, 2, 3, …, dimulai dari
+atas ke bawah dan penomoran kolom: 1, 2, 3, …, dimulai dari kiri ke kanan.
+Dipastikan posisi awal ini selalu berada pada ruangan (bukan tembok!) dan di dalam
+matriks.
+</p>
+</div>
+
+<!-- output format -->
+<div id="outputformat"> 
+<h2>FORMAT KELUARAN </h2>
+<p>
+Program hanya mengeuarkan jumlah langkah paling sedikit untuk mencapai luar
+(sama juga dengan jumlah kotak paling sedikit yang dilalui).
+</p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN</h2>
+<pre class="io">
+8 10
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 0 0 0 0 0 -1 0 0 0
+-1 0 0 -1 -1 0 0 0 -1 -1
+-1 -1 0 0 -1 -1 -1 0 0 -1
+-1 0 0 0 -1 0 -1 -1 -1 -1
+-1 0 -1 0 -1 0 -1 0 0 -1
+-1 0 -1 0 0 0 0 0 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+7 5
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN</h2>
+<pre class="io">
+17
+</pre>
+</div>
+
+
+</body></html>

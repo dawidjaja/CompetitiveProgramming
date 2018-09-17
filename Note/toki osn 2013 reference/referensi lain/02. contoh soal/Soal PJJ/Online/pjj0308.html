@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 23 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title> Quadtree 2: Decode </title>
+</head><body>
+
+<!-- title -->
+<h1> Quadtree 2: Decode </h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0308.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Jika pada Quadtree 1 anda diminta untuk mengkodekan
+matriks biner berukuran 2<sup>p</sup> x 2<sup>p</sup> menjadi
+sejumlah kode quadtree, berikut ini anda diminta untuk
+melakukan kebalikannya. Diberikan sejumlah kode quadtree,
+dapatkan data matriks biner semula.
+</p>
+<p>
+</p>
+ 
+
+</div>
+
+<!-- input format -->
+<div id="inputformat"> 
+<h2> FORMAT MASUKAN </h2>
+<p>
+Masukan terdiri atas sejumlah kode-kode quadtree untuk kuadran-kuadran
+homogen berharga 1, dituliskan satu kode setiap baris,
+terurus secara leksikografi (urutan pada kamus), diikuti dengan 'END'.
+Baris selanjutnya berisikan dua bilangan bulat R dan C
+(2 &le; R &le; 128, dan 2 &le; C &le; 128).
+dipisahkan oleh sebuah spasi, yang menyatakan bahwa matriks semula berukuran
+R baris x C kolom.
+</p>
+<p>
+Dijamin bahwa setiap kode mengkodekan
+secara unik kumpulan elemen matriks tersebut
+(tidak ada yang overlap) dan konsisten
+(tidak ada yang tidak mungkin).
+</p>
+</div>
+
+<!-- output format -->
+<div id="outputformat"> 
+<h2>FORMAT KELUARAN </h2>
+<p>
+Keluarkan R baris, setiap baris mewakili baris pada matriks
+sesuai urutan.  Setiap baris berisi elemen-elemen matriks
+pada baris tersebut sesuai urutan, dipisahkan spasi.
+Ingat bahwa tidak boleh ada spasi di akhir setiap baris.
+</p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 1</h2>
+<pre class="io">
+112
+113
+1211
+1212
+1213
+123
+130
+131
+1320
+1321
+1322
+END
+8 8
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 1</h2>
+<pre class="io">
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 1 1 1 1
+0 0 0 0 1 1 1 1
+0 0 0 1 1 1 1 1
+0 0 1 1 1 1 1 1
+0 0 1 1 1 1 0 0
+0 0 1 1 1 0 0 0
+</pre>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 2</h2>
+<pre class="io">
+END
+3 5
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 2</h2>
+<pre class="io">
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+</pre>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 3</h2>
+<pre class="io">
+1
+END
+4 4
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 3</h2>
+<pre class="io">
+4 4
+1 1 1 1
+1 1 1 1
+1 1 1 1
+1 1 1 1
+</pre>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 4</h2>
+<pre class="io">
+10
+110
+112
+120
+121
+130
+END
+4 4
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 4</h2>
+<pre class="io">
+1 1 1 0
+1 1 1 0
+1 1 1 0
+0 0 0 0
+</pre>
+</div>
+
+
+
+</body></html>

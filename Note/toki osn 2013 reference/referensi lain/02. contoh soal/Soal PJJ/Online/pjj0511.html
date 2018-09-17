@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 30 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title> Tinggi Kandang Susun </title>
+</head><body>
+
+<!-- title -->
+<h1> OSN 2007 : Tinggi Kandang Susun </h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0511.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 32 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Selain bebek, Pak Dengklek berkeinginan memelihara kucing dan karena itu ia bermaksud
+membangun kandang untuk kucing-kucingnya. Harga tanah kini sangat mahal, Pak Dengklek tidak memiliki
+lahan yang cukup luas untuk membangun kandang berlantai satu, maka kandang susunlah solusi untuk
+tempat tidur N kucingnya (1 <= N <= 1000000). Namun dalam kasus ini, justru yang kita pedulikan adalah
+total tinggi dari kandang susun tersebut, bukan luasnya. Sekedar informasi, kucing-kucing Pak Dengklek
+adalah hewan yang rewel, mereka tidak ingin tempat tinggalnya lebih rendah dari batas yang sudah mereka
+tentukan. Untuk tiap lantai kandang, Pak Dengklek hanya dapat memasukkan K (1 <= K <= 1000000)
+kucing secara berurutan, sehingga kucing 1 sampai K pasti akan berada di lantai pertama, kucing ke K+1
+sampai 2K pasti akan berada di lantai kedua, dan seterusnya. Agar semua kucing senang, tinggi setiap lantai
+haruslah nilai maksimal dari batas yang ditentukan oleh kucing-kucing yang ada dalam lantai tersebut. Tugas
+Anda kini adalah mencari berapa total tinggi dari kandang susun yang akan dibangun Pak Dengklek. Perlu
+diingat untuk alas dan atap dibutuhkan papan setebal 1 sentimeter, di antara kedua lantai pun ada sekat
+setebal 1 sentimeter dan tebal-tebal itu harus diperhitungkan juga dalam menentukan total tinggi kandang.
+</p>
+
+<!-- input format -->
+<div id="inputformat"> 
+<h2> FORMAT MASUKAN </h2>
+<p>
+Baris pertama berisi dua buah bilangan bulat N dan K. Baris ke-2 sampai ke N+1 masing-masing
+berisi sebuah bilangan Ti yang merupakan batas tinggi yang diinginkan oleh kucing ke-i (dalam sentimeter).
+</p>
+</div>
+
+<!-- output format -->
+<div id="outputformat"> 
+<h2>FORMAT KELUARAN </h2>
+<p>
+Sebuah bilangan bulat yang menunjukkan total tinggi kandang susun yang akan Pak Dengklek
+bangun (dalam sentimeter).
+</p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 1</h2>
+<pre class="io">
+5 3
+30
+20
+15
+19
+29
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 1</h2>
+<pre class="io">
+62
+</pre>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 2</h2>
+<pre class="io">
+2 2
+2
+2
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 2</h2>
+<pre class="io">
+4
+</pre>
+</div>
+
+<div id="exp">
+<h3>Penjelasan</h3>
+<p>
+Pada contoh 1, total tinggi = 62 = 30 + 29 + 1 (alas) + 1 (atap) + 1 (sekat lantai 1 dan
+lantai 2)
+</p>
+</div>
+
+</body></html>

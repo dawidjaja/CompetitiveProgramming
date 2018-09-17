@@ -1,0 +1,51 @@
+50
+push_back 54
+pop_back
+push_front 32
+pop_front
+push_back 45
+pop_front
+push_back 85
+pop_back
+push_front 28
+pop_front
+push_front 42
+push_back 21
+pop_back
+pop_back
+push_front 23
+pop_back
+push_front 0
+pop_back
+push_front 47
+pop_front
+push_front 90
+pop_front
+push_front 22
+push_front 84
+pop_back
+push_back 18
+pop_front
+pop_back
+push_front 25
+push_back 58
+push_back 57
+pop_front
+push_front 63
+pop_back
+pop_back
+push_front 22
+pop_back
+push_front 15
+pop_back
+push_back 0
+push_back 26
+push_back 84
+push_back 93
+pop_front
+pop_back
+pop_back
+push_back 43
+pop_back
+pop_back
+push_front 53

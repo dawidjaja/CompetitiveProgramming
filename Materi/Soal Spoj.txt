@@ -1,0 +1,53 @@
+142. Johnny and the Glue
+16557. HTML Formatting
+18102. New Year Love Story
+17396. Dazzling Pearls
+15076. A Romantic Movie Outting
+
+200. Monodigital Representations
+210. Altars
+1810. Nuclear Plants
+6999. Avoiding SOS Grids
+11948. Dark Assault
+
+12958. Another Gift Problem
+2275. Toil for Oil
+18469. Office Mates
+13529. Special Graph
+21057. Super Lucky Palindromes
+
+3465. Drive through Megacity
+5104. Spam Detection
+7632. Architecture
+13469. FOREVER ALONE
+13948. Disjoint Subtrees
+
+272. Cave Exploration
+1748. Sequence Partitioning II
+7152. Boundary 2003
+13886. BLOCK_D SOLVER
+15892. Cave
+
+2668. Polygon
+4828. ZSequence
+12371. High Mountains
+16048. Help Rarity Collect Crystals
+10419. Polish Language
+
+9974. Men From Mars
+1471. A Game of Pearls
+21861. I Love Strings
+9081. Snail family problems
+6478. Hamster Flight 2
+
+148. Land for Motorways
+3488. The Top-Code
+4225. Payment System
+21414. Count The Indexes 2
+14981. Light Cycling
+
+10732. Trapezoid
+12651. Finding Fishes
+15827. Vending Machine
+21858. Christmas is coming
+22331. Interection Query

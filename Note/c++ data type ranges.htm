@@ -1,0 +1,604 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1"><link rel="canonical" href="http://msdn.microsoft.com/en-us/library/s3f49ktz%28v=vs.71%29.aspx"><title>
+	
+  Data Type Ranges (C++)
+
+</title>
+    
+
+
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+<meta name="DCS.dcsuri" content="/en-us/library/s3f49ktz(d=lightweight,l=en-us,v=vs.71).aspx">
+
+<meta name="NormalizedUrl" content="http://msdn.microsoft.com/en-us/library/s3f49ktz(d=lightweight,l=en-us,v=vs.71).aspx">
+
+<meta name="VotingContextUrl" content="http://msdn.microsoft.com/en-us/library/s3f49ktz(l=en-us,v=vs.71).aspx">
+
+<meta name="MN" content="D638F192-10:15:55 PM">
+
+<meta name="Search.ShortId" content="s3f49ktz">
+
+<meta name="Ms.Locale" content="en-us">
+<link rel="stylesheet" type="text/css" href="c++%20data%20type%20ranges_files/Combined.css" xmlns="http://www.w3.org/1999/xhtml"><link rel="stylesheet" type="text/css" href="c++%20data%20type%20ranges_files/printview.css" media="print"><link rel="alternate" media="print" href="http://msdn.microsoft.com/en-us/library/s3f49ktz%28d=printer,v=vs.71%29.aspx"><script src="c++%20data%20type%20ranges_files/ms2.js" async="" type="text/javascript"></script><script src="c++%20data%20type%20ranges_files/wtid.js"></script><script src="c++%20data%20type%20ranges_files/broker.js"></script></head>
+<body>
+    
+        
+        
+  <div class="header">
+    
+
+<table class="headerBar cl_lightweight_topnav_slice" cellpadding="0" cellspacing="0" border="0">
+		<tbody><tr>
+			<td class="leftSection cl_lightweight_header_leftSection_wave leftSectionImageClusterOverride">
+        <div class="tabContainer">
+          <a href="http://msdn.microsoft.com/en-us/default.aspx" title="Home" class=" headerTab">Home</a>
+          <a href="http://msdn.microsoft.com/en-us/library/default.aspx" title="Library" class="headerTabSelected cl_lightweight_selected_tab_repeatX ">Library</a>
+          <a href="http://msdn.microsoft.com/en-us/bb188199.aspx" title="Learn" class=" headerTab">Learn</a>
+          <a href="http://msdn.microsoft.com/en-us/aa570309.aspx" title="Downloads" class=" headerTab">Downloads</a>
+          <a href="http://msdn.microsoft.com/en-us/hh361695.aspx" title="Support" class=" headerTab">Support</a>
+          <a href="http://msdn.microsoft.com/en-us/aa497440.aspx" title="Community" class=" headerTab">Community</a>
+          
+        </div>
+      </td>
+			<td class="rightSection cl_lightweight_header_rightSection_wave rightSectionImageClusterOverride">
+        <div class="tabContainer">
+            
+            <a href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=11&amp;ct=1348118154&amp;rver=6.0.5276.0&amp;wp=MCLBI&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=http%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fs3f49ktz%2528v%3dvs.71%2529.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-US" title="Sign in" rel="nofollow">Sign in </a>
+            <span class="pipe">|</span>
+            <a href="http://msdn.microsoft.com/en-us/library/preferences/locale/?returnurl=%252fen-us%252flibrary%252fs3f49ktz%28v%253dvs.71%29.aspx" title="United States - English" rel="nofollow">United States - English </a>
+            <span class="pipe">|</span>
+            <a class="dispinline clip15x15" href="http://msdn.microsoft.com/en-us/library/preferences/experience/?returnurl=%252fen-us%252flibrary%252fs3f49ktz%28v%253dvs.71%29.aspx" title="Preferences" rel="nofollow"><img class="head_gear" src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" alt=""></a>
+            <span class="pipe">|</span>
+            <a id="exportPrintLink" class="dispinline clip30x15 moveToDown" href="http://msdn.microsoft.com/en-us/library/s3f49ktz%28d=printer,v=vs.71%29.aspx" title="Print/Export"><img class="head_print_noarrow" src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" alt=""></a>
+            
+            <div id="exportPrintLinkArrowDiv" class="exportPrintLinkArrow">
+            <a id="exportPrintLinkArrow" class="dispinline clip30x15 moveToDown" href="javascript:void(0);" title="Print/Export"><img class="head_print_arrow" src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" alt=""></a>
+            </div>
+            
+        </div>
+			</td>
+	</tr>
+</tbody></table>
+
+  </div>
+  <div class="contentPlaceHolder">
+    
+    
+  <div class="navigation" id="Navigation" style="width:280px;padding-bottom:96px;">
+    <div class="searchcontainer">
+      
+<form id="SearchForm" action="http://social.msdn.microsoft.com/search/en-us" method="get" style="margin: 0; padding: 0;" onsubmit="return checkSearchBox()">
+<div class="searchBoxContainer" style="">
+  <table class="searchBox" cellpadding="0" cellspacing="0" border="0">
+    <tbody><tr>
+      <td class="searchTextBoxTd">
+        <input value="Search MSDN with Bing" id="SearchInput" maxlength="200" class="searchTextBox" name="query" type="text">
+        
+      </td>
+      <td class="searchButtonTd">
+        <a href="javascript:void(0)" class="clip20x20" style="display: block; overflow: hidden; position: relative;           padding: 0; margin: 0;" onclick="javascript:if(document.getElementById('SearchInput').value == 'Search MSDN with Bing')document.getElementById('SearchInput').value=''; document.getElementById('SearchForm').submit();">
+          <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" style="position: relative;" title="Search " class="isd_search" alt="Search"></a>
+      </td>
+    </tr>
+  </tbody></table>
+</div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    if (!MTPS) var MTPS = {};
+    if (!MTPS.Watermarks) MTPS.Watermarks = {};
+    MTPS.Watermarks.SearchInput = {
+        "control": "SearchInput",
+        "defaultValue": "Search MSDN with Bing",
+        "defaultCSS": "searchTextBox",
+        "focusCSS": "searchTextBoxTrue"
+    };
+    function checkSearchBox() {
+        if (document.getElementById("SearchInput").value == MTPS.Watermarks.SearchInput.defaultValue) {
+            document.getElementById("SearchInput").value = "";
+        }
+    }
+ //]]>
+</script>
+
+
+    </div>
+    <div class="navcontainer">
+      
+
+<div class="nav">
+    
+    <div id="tocnav">
+        
+        <div class="toclevel0 ancestry">
+            
+            <div class="clip5x9 nav_root">
+                <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_bullet" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/ms123401.aspx" id="ms310241_MSDN.10_en-us" title="MSDN Library">MSDN Library</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/aa187916.aspx" id="aa187916_MSDN.10_en-us" title="Development Tools and Languages">Development Tools and Languages</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/aa973739%28v=vs.71%29.aspx" id="aa973739_VS.71_en-us" title="Visual Studio .NET">Visual Studio .NET</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/aa983532%28v=vs.71%29.aspx" id="aa973740_VS.71_en-us" title="Visual C++">Visual C++</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/aa983533%28v=vs.71%29.aspx" id="ms393148_VS.71_en-us" title="Reference">Reference</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/dtefa218%28v=vs.71%29.aspx" id="aa713813_VS.71_en-us" title="C/C++ Languages">C/C++ Languages</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/3bstk3k5%28v=vs.71%29.aspx" id="aa713815_VS.71_en-us" title="C++ Language Reference">C++ Language Reference</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/k1f45exx%28v=vs.71%29.aspx" id="aa713833_VS.71_en-us" title="Basic Concepts">Basic Concepts</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/z8336xfc%28v=vs.71%29.aspx" id="aa713853_VS.71_en-us" title="Types">Types</a>
+            </div>
+            
+            <div class="clip13x9 nav_arrows">
+                <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/cc953fe1%28v=vs.71%29.aspx" id="aa713855_VS.71_en-us" title="Fundamental Types">Fundamental Types</a>
+            </div>
+            
+        </div>
+        
+        <div class="toclevel1 children" style="border-bottom: 1px solid #bbbbbb;">
+            
+                <div class="clip13x9 nav_dots_current">
+                    <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div class="toclevel1 current">
+                    <a href="http://msdn.microsoft.com/en-us/library/s3f49ktz%28v=vs.71%29.aspx" title="Data Type Ranges">Data Type Ranges</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/fxky5d0w%28v=vs.71%29.aspx" title="void">void</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/tf4dy80a%28v=vs.71%29.aspx" title="bool">bool</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/0ky11k1s%28v=vs.71%29.aspx" title="false">false</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/eke1xt9y%28v=vs.71%29.aspx" title="true">true</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/29dh1w7z%28v=vs.71%29.aspx" title="__int8, __int16, __int32, __int64">__int8, __int16, __int32, __int64</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/08x3t697%28v=vs.71%29.aspx" title="__m64">__m64</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ayeb3ayc%28v=vs.71%29.aspx" title="__m128">__m128</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/25537780%28v=vs.71%29.aspx" title="__m128d">__m128d</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/26232t5c%28v=vs.71%29.aspx" title="__m128i">__m128i</a>
+                </div>
+                
+        </div>
+        
+    </div>
+    
+    
+    
+        <img src="c++%20data%20type%20ranges_files/clear.gif" alt="Separator" class="communityContentNavigationSeparator cl_lt_cc_line_top">
+    
+</div>
+
+<script type="text/javascript"> 
+  //<![CDATA[
+  if (!MTPS) var MTPS = {};
+  MTPS.TopicNodes= {
+  
+            "_last": ''
+    };
+  //]]>
+</script>
+
+    </div>
+    
+  </div>
+  <div id="tocResizeContainer" style="visibility: visible;">
+  <a href="javascript:void(0)" class="tocResize" id="TocResize" style="left:280px">
+    <img id="ResizeImageIncrease" class="cl_nav_resize_open" src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" title="Expand" alt="Expand">
+      <img id="ResizeImageReset" class="cl_nav_resize_close" src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" style="display:none" title="Minimize" alt="Minimize">
+  </a>
+  </div>
+  <div class="content">
+    
+    
+
+<div class="clip75x25 logo">
+  <a href="http://msdn.microsoft.com/en-us/default.aspx">
+    <img src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" class="msdn_body_logo" alt="MSDN" title="MSDN">
+  </a>
+</div>
+
+    <div class="topicContainer">
+        
+    
+    
+
+    
+
+    
+<div class="topic" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns="http://www.w3.org/1999/xhtml">
+  <h1 class="title">Data Type Ranges</h1>
+  <div class="lw_vs">
+    <div id="curversion">
+      <strong>
+            Visual Studio .NET 2003</strong>
+    </div>
+    <div id="versionclick" style="visibility: visible;">
+      <div id="vsseperator" class="cl_lw_vs_seperator"></div>
+      <div id="versionclick_c1"></div>
+      <div id="versionclick_c2">
+        <div class="">
+          <a id="vsLink" href="javascript:;">
+                    Other Versions
+                </a>
+        </div>
+        <div class="cl_vs_arrow clip10x10">
+          <img class="cl_lw_vs_arrow" id="vsArrow" alt="" src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png">
+        </div>
+      </div>
+      <div id="versionclick_c3"></div>
+    </div>
+    <ul id="vsPanel">
+      <li>
+        <a href="http://msdn.microsoft.com/en-us/library/s3f49ktz%28v=vs.110%29.aspx" title="">Visual Studio 2012</a>
+      </li>
+      <li>
+        <a href="http://msdn.microsoft.com/en-us/library/s3f49ktz%28v=vs.100%29.aspx" title="">Visual Studio 2010</a>
+      </li>
+      <li>
+        <a href="http://msdn.microsoft.com/en-us/library/s3f49ktz%28v=vs.90%29.aspx" title="">Visual Studio 2008</a>
+      </li>
+      <li>
+        <a href="http://msdn.microsoft.com/en-us/library/s3f49ktz%28v=vs.80%29.aspx" title="">Visual Studio 2005</a>
+      </li>
+    </ul>
+  <div id="ratingCounterSeperator" class="cl_lw_vs_seperator" style="display: block;"></div><div style="margin: 0px 0px 0px 13px; display: block;" id="ratingCounter">
+        <span id="rcA" class="ratingText">
+            28 out of 36 rated this helpful <span id="rateThisPrefix">- </span><a id="rateThisTopic" href="#feedback" title="Rate this topic">Rate this topic</a>
+            
+        </span>
+    </div></div>
+  <div style="clear:both;"></div>
+  
+  <a name="_langref_data_type_ranges">
+    
+  </a>  <div id="nstext" valign="bottom">  <p>Microsoft Visual C++ recognizes the types shown in the table below.</p> <div class="tablediv"><table class="dtTABLE"> <tbody><tr valign="top"> <th width="21%">Type Name</th> <th width="13%">Bytes</th> <th width="25%">Other Names</th> <th width="41%">Range of Values</th> </tr> <tr valign="top"> <td width="21%">int</td> <td width="13%">*</td> <td width="25%">signed, <br>
+signed int</td> <td width="41%">System dependent</td> </tr> <tr valign="top"> <td width="21%">unsigned int</td> <td width="13%">*</td> <td width="25%">unsigned</td> <td width="41%">System dependent</td> </tr> <tr valign="top"> <td width="21%">__int8</td> <td width="13%">1</td> <td width="25%">char, <br>
+signed char</td> <td width="41%">–128 to 127</td> </tr> <tr valign="top"> <td width="21%">__int16</td> <td width="13%">2</td> <td width="25%">short, <br>
+short int, <br>
+signed short int</td> <td width="41%">–32,768 to 32,767</td> </tr> <tr valign="top"> <td width="21%">__int32</td> <td width="13%">4</td> <td width="25%">signed, <br>
+signed int</td> <td width="41%">–2,147,483,648 to 2,147,483,647</td> </tr> <tr valign="top"> <td width="21%">__int64</td> <td width="13%">8</td> <td width="25%">none</td> <td width="41%">–9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td> </tr> <tr valign="top"> <td width="21%">bool</td> <td width="13%">1</td> <td width="25%">none</td> <td width="41%">false or true</td> </tr> <tr valign="top"> <td width="21%">char</td> <td width="13%">1</td> <td width="25%">signed char</td> <td width="41%">–128 to 127</td> </tr> <tr valign="top"> <td width="21%">unsigned char</td> <td width="13%">1</td> <td width="25%">none</td> <td width="41%">0 to 255</td> </tr> <tr valign="top"> <td width="21%">short</td> <td width="13%">2</td> <td width="25%">short int, <br>
+signed short int</td> <td width="41%">–32,768 to 32,767</td> </tr> <tr valign="top"> <td width="21%">unsigned short</td> <td width="13%">2</td> <td width="25%">unsigned short int</td> <td width="41%">0 to 65,535</td> </tr> <tr valign="top"> <td width="21%">long</td> <td width="13%">4</td> <td width="25%">long int, <br>
+signed long int</td> <td width="41%">–2,147,483,648 to 2,147,483,647</td> </tr> <tr valign="top"> <td width="21%">long long</td> <td width="13%">8</td> <td width="25%">none (but equivalent to __int64)</td> <td width="41%">–9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td> </tr> <tr valign="top"> <td width="21%">unsigned long</td> <td width="13%">4</td> <td width="25%">unsigned long int</td> <td width="41%">0 to 4,294,967,295</td> </tr> <tr valign="top"> <td width="21%">enum</td> <td width="13%">*</td> <td width="25%">none</td> <td width="41%">Same as int</td> </tr> <tr valign="top"> <td width="21%">float</td> <td width="13%">4</td> <td width="25%">none</td> <td width="41%">3.4E +/- 38 (7 digits)</td> </tr> <tr valign="top"> <td width="21%">double</td> <td width="13%">8</td> <td width="25%">none</td> <td width="41%">1.7E +/- 308 (15 digits)</td> </tr> <tr valign="top"> <td width="21%">long double</td> <td width="13%">same as double</td> <td width="25%">none</td> <td width="41%">same as double</td> </tr> <tr valign="top"> <td width="21%">wchar_t</td> <td width="13%">2</td> <td width="25%">__wchar_t</td> <td width="41%">0 to 65,535</td> </tr> </tbody></table></div> <p>A
+ variable of __wchar_t designates a wide-character or multibyte 
+character type. By default wchar_t is a typedef for unsigned short. Use 
+the L prefix before a character or string constant to designate the 
+wide-character-type constant. When compiling with <a href="http://msdn.microsoft.com/en-us/library/dh8che7s%28v=vs.71%29.aspx">/Zc:wchar_t</a> or <a href="http://msdn.microsoft.com/en-us/library/0k0w269d%28v=vs.71%29.aspx">/Za</a>, the compiler can distinguish between an unsigned short and wchar_t for function overload purposes.</p> <p>Signed
+ and unsigned are modifiers that can be used with any integral type 
+except bool. The char type is signed by default, but you can specify <a href="http://msdn.microsoft.com/en-us/library/0d294k5z%28v=vs.71%29.aspx">/J</a> (compiler option) to make it unsigned by default.</p> <p>The
+ int and unsigned int types have the size of the system word: four 
+bytes. However, portable code should not depend on the size of int.</p> <p>Microsoft C/C++ also features support for sized integer types. See <a href="http://msdn.microsoft.com/en-us/library/29dh1w7z%28v=vs.71%29.aspx">__int8, __int16, __int32, __int64</a> for more information. Also see <a href="http://msdn.microsoft.com/en-us/library/2k2xf226%28v=vs.71%29.aspx">Integer Limits</a>.</p> <p>See <a href="http://msdn.microsoft.com/en-us/library/cc953fe1%28v=vs.71%29.aspx">Fundamental Types</a> for more information on the restrictions of the sizes of each type.</p> <h4 class="dtH4">See Also</h4> <p><a href="http://msdn.microsoft.com/en-us/library/2e6a4at9%28v=vs.71%29.aspx">C++ Keywords</a> | <a href="http://msdn.microsoft.com/en-us/library/cc953fe1%28v=vs.71%29.aspx">Fundamental Types</a></p>  </div> </div>
+
+        
+
+
+
+<div id="contentFeedback">
+    <form method="post" action="/en-us/library/feedback/add/s3f49ktz(v=vs.71).aspx">
+        <input name="__RequestVerificationToken" value="bfcONoquzsLKUtVwXoFHuif6/VDQq27hjdxr0ZepIp5bn9YbOazpPo77JtjcHdaXzFs9ldK8BTiUkGQBOE4a5YpeSCs3WGNM3z7s4d4bmBd8F4+RDgGp5fZmqEptYhdBXROIAw==" type="hidden">
+    <div id="contentFeedbackContainer">
+        <div class="FeedbackTitleContainer">
+            <a name="feedback"></a>
+        Did you find this helpful?
+            <input id="rdIsUsefulYes" name="rdIsUseful" value="1" onclick="toggleContentFeedback('Yes');" type="radio"><label for="rdIsUsefulYes">Yes</label>
+            <input id="rdIsUsefulNo" name="rdIsUseful" value="0" onclick="toggleContentFeedback('No');" type="radio"><label for="rdIsUsefulNo">No</label>
+        
+        </div>
+        
+            <div id="contentFeedbackQAContainer">
+                
+                    <div id="feedbackListNoContainer" class="FeedbackListContainer">
+                        
+                            <div>
+                                <input id="chkbxNo201" name="chkbxNo" value="201" type="checkbox">
+                                <label for="chkbxNo201">Not accurate</label>
+                            </div>
+                        
+                            <div>
+                                <input id="chkbxNo202" name="chkbxNo" value="202" type="checkbox">
+                                <label for="chkbxNo202">Not enough depth</label>
+                            </div>
+                        
+                            <div>
+                                <input id="chkbxNo203" name="chkbxNo" value="203" type="checkbox">
+                                <label for="chkbxNo203">Need more code examples</label>
+                            </div>
+                        
+                    </div>
+                
+                <div class="FeedbackTellUsMoreContainer">
+                    <textarea id="feedbackText" name="feedbackText" class="TellUsMoreTextBoxSearchLoaded" onfocus="WatermarkFocus(this, 'Tell us more...', 'TellUsMoreTextBoxSearch')" onblur="WatermarkBlur(this, 'Tell us more...', 'TellUsMoreTextBoxSearchLoaded')" onmouseover="TextBoxCharactersCounter(this, document.getElementById('feedbackTextCounter'), 1500)" onkeydown="TextBoxCharactersCounter(this, document.getElementById('feedbackTextCounter'), 1500)" onkeyup="TextBoxCharactersCounter(this, document.getElementById('feedbackTextCounter'), 1500)">Tell us more...</textarea>
+                </div>
+                <span class="counter">(<span id="feedbackTextCounter">1500</span> characters remaining)</span>
+                <input id="returnUrl" name="returnUrl" value="http://msdn.microsoft.com/en-us/library/s3f49ktz(v=vs.71).aspx" type="hidden">
+                <input id="submit" value="Submit" title="Click to Submit Feedback" onclick="WatermarkOnSubmit(document.getElementById('feedbackText'), 'Tell us more...', 'TellUsMoreTextBoxSearch')" type="submit">
+                <div style="clear: both;"></div>
+            </div>  
+        
+    </div>
+    </form>
+</div>
+
+    </div>
+    
+  </div>
+        
+  </div>
+  <div class="footer">
+    
+
+<div id="footer" class="msdn footerContainer cl_footer_slice">
+  <div class="footerLogoContainer">
+    <div class="footerContent">
+    <div class="copyright">
+      © 2012 Microsoft. All rights reserved.</div>
+    <div class="footerLogo cl_footer_logo"></div>
+    <a href="http://msdn.microsoft.com/cc300389.aspx">Terms of Use</a><span class="pipe"> | </span>
+    <a href="http://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx">Trademarks</a><span class="pipe"> | </span>
+    <a href="http://go.microsoft.com/fwlink/?LinkId=248681">Privacy Statement</a>
+    <span class="pipe">| </span>
+    <span class="FeedbacklinkDisabled" id="FeedbacklinkDisabled">Site Feedback</span>
+    <a id="Feedbacklink" title="Site Feedback" class="FeedbackLink" href="javascript:void(0)">
+      Site Feedback
+        <span class="FeedbackButton clip20x21" id="FeedbackButton">
+          <img id="feedBackImg" class="cl_footer_feedback_icon" src="c++%20data%20type%20ranges_files/Msdn_ImageSprite.png" alt="Site Feedback">
+        </span>
+      </a>
+    
+  <div id="FeedbackContainer" class="FeedbackContainer">
+    <form id="siteFeedbackForm" method="post" action="/en-us/library/feedback/add/s3f49ktz(v=vs.71).aspx">
+        <input name="__RequestVerificationToken" value="nWhKLCVOWZkH4RqEYtvvyFg1JwsGhwQNNS1YoWjCXoiOBcqe2gZPW7UTTu6Zey/gtGa8deUvdSL9HK5aaX0CiDJYEhF8WCC9vVQonY0ibMM0/mC5ko5sKJILPOjCp0EuP9rxnA==" type="hidden">
+    <div class="FeedbackTitleContainer">
+        <div class="FeedbackTitle">
+            Site Feedback</div>
+        <div class="FeedbackCancel">
+            <a href="javascript:;" onclick="document.getElementById('FeedbackContainer').style.display = 'none';">x</a>
+            </div>
+    </div>
+    <div class="FeedbackData">
+        <div class="FeedbackInfoText">
+            Tell us about your experience...
+        </div>
+        <div class="QuestionText">
+            Did the page load quickly?
+        </div>
+        <div class="AnswerText">
+            
+            <span>
+                Yes<span>
+                    <input id="searchBox" name="searchBox" value="1" type="radio"></span></span>
+            
+            <span>
+                No<span>
+                    <input id="searchBox" name="searchBox" value="0" type="radio"></span></span>
+            
+        </div>
+        <div class="QuestionText">
+            Do you like the page design?
+        </div>
+        <div class="AnswerText">
+            
+            <span>
+                Yes<span>
+                    <input id="tabbedCode" name="tabbedCode" value="1" type="radio"></span></span>
+            
+            <span>
+                No<span>
+                    <input id="tabbedCode" name="tabbedCode" value="0" type="radio"></span></span>
+            
+        </div>
+        <div class="QuestionText">
+            Tell us more
+        </div>
+        <div class="FeedbackTextAreaContainer">
+            <textarea id="feedbackText" data-maxlength="4000" name="feedbackText" cols="25" rows="5" class="FeedbackTextArea"></textarea>
+            
+            <textarea id="feedbackDescription" name="feedbackDescription" cols="25" rows="10" style="display:none;">Enter description here.</textarea>
+            <input id="feedbackPriority" name="feedbackPriority" value="" type="hidden">
+            <input id="feedbackSourceUrl" name="feedbackSourceUrl" value="" type="hidden">
+            <input id="ClientIP" name="ClientIP" value="" type="hidden">
+            <input id="ClientOS" name="ClientOS" value="" type="hidden">
+            <input id="ClientBrowser" name="ClientBrowser" value="" type="hidden">
+            <input id="ClientTime" name="ClientTime" value="" type="hidden">
+            <input id="ClientTimeZone" name="ClientTimeZone" value="" type="hidden">
+            
+            
+        </div>
+        <div>
+            <input id="siteFeedbackSubmit" value="Send" class="FeedbackSubmit" onclick="submitSiteFeedback('-1');" type="submit">
+        </div>
+    </div>
+    <input id="returnUrl" name="returnUrl" value="http://msdn.microsoft.com/en-us/library/s3f49ktz(v=vs.71).aspx" type="hidden">
+    
+    
+    <input id="feedBackVersion" name="feedBackVersion" value="1" type="hidden">
+    
+  </form> 
+</div>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+
+    
+        <div class="MetricsContainer">
+            
+    <div class="WebtrendsContainer">
+      
+
+<script type="text/javascript">
+//<![CDATA[
+  var literalNormalizedUrl = '/en-us/library/s3f49ktz(d=lightweight,l=en-us,v=vs.71).aspx';
+  var wt_nvr_ru = 'WT_NVR_RU';
+  var wt_fpcdom = '.microsoft.com';
+  var wt_domlist = 'msdn.microsoft.com';
+  var wt_pathlist = '';
+  var wt_paramlist = 'DCSext.mtps_devcenter';
+  var wt_siteid = 'MSDN';
+  var gDomain = 'm.webtrends.com';
+  var gDcsId = 'dcsmgru7m99k7mqmgrhudo0k8_8c6m';
+  var gFpc = 'WT_FPC';
+  if (document.cookie.indexOf(gFpc + "=") == -1) {
+    var wtidJs = document.createElement("script");
+    wtidJs.src = "//" + gDomain + "/" + gDcsId + "/wtid.js";
+    document.getElementsByTagName("head")[0].appendChild(wtidJs);
+  }
+  var detectedLocale = 'en-us';
+  var wtsp = 'msdnlib_devtools_lang';
+  var gTrackEvents = '0';
+/*]]>*/
+</script>
+<noscript><div><img alt="DCSIMG" id="Img1" width="1" height="1" src="http://m.webtrends.com/dcsmgru7m99k7mqmgrhudo0k8_8c6m/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" /></div></noscript>
+
+
+    </div>
+    
+    <div class="OmnitureContainer">
+      
+
+
+
+<script type="text/javascript">
+  var omni_guid = '3624e8ae-4613-4481-a436-2237ef966c29'; 
+</script>
+
+
+
+<noscript>
+    <a href="http://www.omniture.com" title="Web Analytics">
+        <img src="//msstonojsmsdn.112.2o7.net/b/ss/msstonojsmsdn/1/H.20.2--NS/0" height="1" width="1" border="0" alt="" /></a>
+</noscript>
+
+
+    </div>
+    
+        </div>
+        
+
+<!--[CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]-->
+<script type="text/javascript" src="c++%20data%20type%20ranges_files/Combined.js" xmlns="http://www.w3.org/1999/xhtml"></script>
+
+<script src="c++%20data%20type%20ranges_files/broker-config.js"></script><div id="_WEDCSInsertedData" style="display: none;"><iframe id="_msnFrame" src="c++%20data%20type%20ranges_files/c.gif" style="z-index:-1;height:1px;width:1px;display:none;visibility:hidden;" onload="javascript:MscomBeacon();"></iframe></div></body></html>

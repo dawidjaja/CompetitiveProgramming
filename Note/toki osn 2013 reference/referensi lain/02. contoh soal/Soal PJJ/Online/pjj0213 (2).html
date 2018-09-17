@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 23 Juni 2008 -->
+
+
+  <!-- browser title -->
+  <title>PrimaPrima</title>
+</head><body>
+
+<!-- title -->
+<h1>PrimaPrima</h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0213.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Jika A dan B adalah bilangan prima,
+apakah AB (A ditempelkan dengan B) juga prima?  Bisa ya bisa tidak.
+Jika A = 2 dan B = 3, 23 juga prima.
+Namun jika A = 2 dan B = 5, 25 bukan prima.
+</p>
+<p>
+Diberikan dua buah bilangan bulat, M dan N,
+Anda diminta untuk mencari pasangan-pasangan
+bilangan-bilangan prima A dan B (M &le; A, B &le; N)
+sehingga AB (A ditempelkan dengan B) juga prima.
+Secara manual ini adalah pekerjaan yang melelahkan, jadi
+biarlah komputer yang akan mencarinya.
+Tapi komputer kan benda yang bodoh.
+Dia tidak dapat menghitung sendiri kecuali
+kalau Anda buatkan program untuknya agar dia
+dapat melakukannya untuk Anda.
+</p>
+</div>
+
+<!-- input format -->
+<div id="inputformat"> 
+<h2> FORMAT MASUKAN </h2>
+<p>
+Baris pertama berisi dua bilangan bulat, M dan N
+(2 &le; M &le; N &le; 10000).  Untuk mengurangi running time program,
+dibatasi (N - M) &le; 50.
+</p>
+</div>
+
+<!-- output format -->
+<div id="outputformat"> 
+<h2>FORMAT KELUARAN </h2>
+<p>
+Keluarkan pasangan-pasangan bilangan prima yang memenuhi syarat
+di atas, satu pasang setiap baris dengan kedua bilangan prima
+dipisahkan sebuah spasi.  Jika tidak ada pasangan yang memenuhi,
+keluarkan 'TIDAK ADA'.  Untuk memudahkan server memeriksa
+(maklum servernya bodoh), urutkan pasangan-pasangan tersebut,
+sehingga bilangan pertama terurut menaik,
+dan untuk bilangan pertama yang sama,
+bilangan kedua terurut menaik.
+</p>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 1</h2>
+<pre class="io">
+2 10
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 1</h2>
+<pre class="io">
+2 3
+3 7
+5 3
+7 3
+</pre>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 2</h2>
+<pre class="io">
+4 10
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 2</h2>
+<pre class="io">
+TIDAK ADA
+</pre>
+</div>
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 3</h2>
+<pre class="io">
+950 1000
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 3</h2>
+<pre class="io">
+953 977
+953 983
+971 977
+977 971
+997 991
+</pre>
+</div>
+
+</body></html>

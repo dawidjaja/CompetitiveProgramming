@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <link rel="stylesheet" type="text/css" href="css/apalah.css">
+
+  <!-- Author: INSERT HERE -->
+  <!-- Last Updated: 12 Juli 2008 -->
+
+
+  <!-- browser title -->
+  <title>Matriks Overlapping</title>
+</head><body>
+
+<!-- title -->
+<h1>Matriks Overlapping </h1>
+
+<!-- author -->
+<div id="penulis">
+</div>
+
+<!-- header -->
+<table id="header">
+  <tbody><tr>
+    <td class="judul"> Nama Program:</td>
+    <td> <span class="code"> pjj0207.PAS / C / CPP </span></td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas <i>Run-time</i>:</td>
+    <td> 1 detik / test-case</td>
+  </tr>
+  <tr>
+    <td class="judul"> Batas Memori: </td>
+    <td> 16 MB </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Masukan: </td>
+    <td> <span class="code"> Standard input (keyboard) </span> </td>
+  </tr>
+  <tr>
+    <td class="judul"> Nama Berkas Keluaran: </td>
+    <td> <span class="code"> Standard output (layar) </span> </td>
+  </tr>
+</tbody></table>
+
+<!-- problem statement -->
+<div id="problem">
+<p>
+Diberikan dua buah matriks berukuran sembarang,
+N x M (1 &#8804; N &#8804; 25, 1 &#8804; M &#8804; 25).
+Catatan: jumlah baris dan jumlah kolom belum tentu sama
+dan kedua matriks belum tentu berukuran sama pula.
+</p>
+<p>
+Dalam latihan ini Anda memeriksa apakah kedua matriks
+tersebut bertumpukan (overlapping).
+Kedua matriks overlapping apabila kedua matriks tersebut
+dapat diposisikan di dunia nyata sehingga ada
+submatriks dari matriks pertama yang sama dengan
+submatriks dari matriks kedua.
+</p>
+<p>
+Ada banyak cara dua buah matriks dapat saling overlapping
+di dunia nyata:
+</p>
+<img src="pjj0207/image001.gif" title="overlapping">
+<p>
+Daerah yang berwarna abu-abu adalah submatriks dari kedua
+matriks yang saling bertumpukan.  Catatan: pada gambar ke-4,
+sebuah matriks tepat adalah submatriks dari matriks lainnya.
+</p>
+
+<p>
+Program anda harus menemukan submatriks dengan sebanyak-banyaknya
+elemen yang overlapping dari kedua matriks yang diberikan,
+dan mengeluarkan banyak baris dan banyak kolom dari
+submatriks tersebut.
+Jika tidak ada yang bertumpukan maka keluarkan '0 0'.
+</p>
+<p>
+Format masukan untuk kedua matriks adalah seperti
+latihan-latihan sebelumnya.
+</p>
+<p>
+Format keluaran adalah banyak baris dan banyak kolom
+submatriks yang Anda temukan, dalam satu baris dipisahkan spasi.
+Panjang dan lebar submatriks terbesar untuk setiap
+test case dijamin unik.
+</p>
+
+
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 1</h2>
+<pre class="io">3 3
+1 2 3
+4 5 6
+7 8 9
+3 3
+7 8 9
+2 3 6
+5 6 1
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 1</h2>
+<pre class="io">2 2
+</pre>
+</div>
+
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 2</h2>
+<pre class="io">2 4
+2 1 1 2
+2 1 1 2
+4 2
+2 2
+2 2
+1 1
+1 1
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 2</h2>
+<pre class="io">2 2
+</pre>
+</div>
+
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 3</h2>
+<pre class="io">3 4
+1 1 1 1
+1 5 5 1
+1 1 1 1
+4 5
+1 1 1 1 1
+1 1 5 5 1
+1 1 1 1 1
+1 1 1 1 1
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 3</h2>
+<pre class="io">3 4
+</pre>
+</div>
+
+
+<!-- sample input -->
+<div id="sampleinput"> 
+<h2>CONTOH MASUKAN 4</h2>
+<pre class="io">3 3
+1 2 3
+4 5 6
+7 8 9
+3 3
+1 2 3
+4 5 6
+7 8 8
+</pre>
+</div>
+
+<!-- sample output -->
+<div id="sampleoutput"> 
+<h2>CONTOH KELUARAN 4</h2>
+<pre class="io">0 0
+</pre>
+</div>
+
+<!-- explanation -->
+<div id="exp">
+<h3> Penjelasan</h3>
+<p>
+Untuk masukan pertama, kedua matriks bertumpukan
+di submatriks berukuran 1 x 1
+</p>
+<pre class="io">1
+</pre>
+<p>
+dan submatriks berukuran 1 x 3
+</p>
+<pre class="io">7 8 9
+</pre>
+<p>
+serta submatriks berukuran 2 x 2
+</p>
+<pre class="io">2 3
+5 6
+</pre>
+<p>
+Submatriks yang terbesar adalah submatriks 2 x 2 (ada 4 elemen).
+</p>
+<p>
+Hasil keluaran untuk masukan 1, 2, dan 3 dapat digambarkan dengan
+diagram berikut:
+</p>
+<img src="pjj0207/image002.gif" title="diagram keluaran">
+</div>
+
+
+<!-- explanation -->
+<div id="exp">
+<h3>Petunjuk</h3>
+<p>
+Ada banyak cara memecahkan soal ini.  Salah satu cara yang bisa
+dipakai adalah sebagai berikut:
+</p>
+<ul>
+<li><p>Bayangkan bahwa matriks pertama diletakkan di tempat
+tertentu dan tidak bergerak.</p></li>
+<li><p>Bayangkan bahwa matriks kedua diletakkan di sebelah
+kiri atas matriks pertama, tetapi tidak menyentuh matriks
+pertama.</p></li>
+<li><p>"Jalankanlah" matriks kedua sehingga overlapping
+pada submatriks 1 x 1 dengan matriks pertama, lalu overlapping
+pada submatriks 1 x 2, 1 x 3, dan seterusnya.</p></li>
+<li><p>Lalu matriks kedua diletakkan lagi di sebelah kiri atas
+matriks pertama.  Matriks
+kedua dijalankan sehingga overlapping pada submatriks 2 x 1, 2 x 2,
+2 x 3, dan seterusnya.</p></li>
+<li><p>Coba semua kemungkinan (matriks kedua dijalankan
+terus menerus) sampai pada akhirnya,
+matriks kedua berada di
+sebelah kanan bawah matriks pertama.</p></li>
+</ul>
+<p>
+Jika masih belum begitu jelas, dapat didiskusikan dengan
+peserta lain atau pembina di forum diskusi.
+</p>
+</div>
+
+
+</div></body></html>
