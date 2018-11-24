@@ -1,3 +1,10 @@
+# ignore binaries
+*
+!*.*
+!*/
+*.pyc
+*.class
+
 Note/*
 Materi/*
 
