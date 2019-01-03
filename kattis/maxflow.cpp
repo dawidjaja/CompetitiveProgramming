@@ -93,8 +93,8 @@ int main() {
             v[b].push_back(a);
             edge.push_back({a, b});
         }
-        flow[a][b] += c;
-        start[a][b] += c;
+        flow[a][b] = c;
+        start[a][b] = c;
     }
     while (make_level()) {
         //dinic's
