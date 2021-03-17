@@ -1,20 +1,20 @@
-#include<vector>
-#include<algorithm>
-#include<cstdio>
-#include<cmath>
+#include <bits/stdc++.h>
+
 using namespace std;
 
 const double pi = M_PI;
+
 double f2(double a, double b, double x) {
     double fx = a * exp(-x * x) + b * sqrt(x);
     return pi * fx * fx;
 }
 
-template<class F>
-double quad(double a, double b, F f, const int n = 1000) {
-    double h = (b - a) / 2 / n, v = f(a) + f(b); 
-    for (int i = 1; i < n * 2; i++)
+double quad(double a, double b, const int n = 1000) {
+    double h = (b - a) / 2 / n;
+    double v = f(a) + f(b); 
+    for (int i = 1; i < n * 2; i++) {
         v += f(a + i * h) * (i & 1 ? 4 : 2);
+    }
     return v * h / 3;
 }
 
